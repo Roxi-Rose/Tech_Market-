@@ -59,6 +59,7 @@ const Browse = () => {
         ))}
       </div>
     </div>
+    
   );
 };
 

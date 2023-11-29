@@ -5,6 +5,7 @@ import Footer from './Footer';
 import SearchBar from './Searchbar';
 import Devices from './Devices';
 import Browse from './Browse'; 
+import Filter from './Filter';
 
 function Layout() {
   return (
@@ -14,7 +15,7 @@ function Layout() {
      <SearchBar />
      <Devices/>
      <Browse/>
-
+     <Filter/>
     </section>
   );
 }
