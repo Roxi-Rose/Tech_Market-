@@ -66,6 +66,7 @@ header {
 .sign-up {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .header-logo {
@@ -322,4 +323,9 @@ footer img {
     color: #ffffff;
     margin-left: 10px;
     margin-top: 8px;
+}
+
+.auction {
+    border-radius: 50%;
+    top: 0;
 }

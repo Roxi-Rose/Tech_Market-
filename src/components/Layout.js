@@ -11,11 +11,11 @@ function Layout() {
   return (
     <section className="layout">
      <Header/>
-     <Footer/>
      <SearchBar />
      <Devices/>
-     <Browse/>
      <Filter/>
+     <Browse/>
+     <Footer/>
     </section>
   );
 }
