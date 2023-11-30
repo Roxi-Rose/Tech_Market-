@@ -1,0 +1,28 @@
+.product-listing-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-listing-form form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    border-radius: 30px;
+}
+
+.product-listing-form input {
+    height: 20px;
+    border-radius: 5px;
+}
+
+.product-listing-form button {
+    margin: 20px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+}

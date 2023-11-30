@@ -6,6 +6,7 @@ import SearchBar from './Searchbar';
 import Devices from './Devices';
 import Browse from './Browse'; 
 import Filter from './Filter';
+import ProductListingForm from './ProductListingForm';
 
 function Layout() {
   return (
@@ -15,6 +16,7 @@ function Layout() {
      <Devices/>
      <Filter/>
      <Browse/>
+    <ProductListingForm/>
      <Footer/>
     </section>
   );
