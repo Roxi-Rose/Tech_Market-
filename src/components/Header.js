@@ -19,9 +19,9 @@ function Header() {
     </nav>
     </div>
     <div className="sign-up">
-      <button>Register/Login</button>
-      <button><img src="/assets/shop.jpg" alt="Shop Icon" className="shop-icon" /></button>
-      
+      <button>Login</button>
+      <img src="/assets/shop.jpg" alt="Shop Icon" className="shop-icon" />
+      <div className="cart-count">0</div>
     </div>
     </header>
    
