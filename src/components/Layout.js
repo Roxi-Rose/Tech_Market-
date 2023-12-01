@@ -7,6 +7,7 @@ import SearchBar from './Searchbar';
 import Devices from './Devices';
 import Browse from './test'; 
 import Filter from './testFilter';
+import ProductListingForm from './ProductListingForm'
 
 function Layout() {
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -21,6 +22,8 @@ function Layout() {
           <Route path="/" element={<Browse products={filteredProducts} />} />
           <Route path="/filter" element={<Filter setFilteredProducts={setFilteredProducts} />} />
         </Routes>
+        <ProductListingForm/>
+
         <Footer />
       </section>
     </Router>
