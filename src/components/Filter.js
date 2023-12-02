@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 
 const Filter = () => {
   // Products...
-  const [products, setProducts] = useState([
-    { type: 'Laptop', brand: 'A', condition: 'see details', price: '3000'},
-  ]);
-
+  const [products, setProducts] = useState([]);
+  
   //useState for each filter...
   const [filterType, setFilterType] = useState('');
   const [filterBrand, setFilterBrand] = useState('');
@@ -21,23 +19,43 @@ const Filter = () => {
     <div className="filter-container">
       {/* Filter Type */}
       <select className="select-box"  onChange={(e) => setFilterType(e.target.value)}>
-        <option value="">Select Type</option>
-        <option value="">Laptop</option>
-        <option value="">Phone</option>
+        <option className = "option" value ="">Type</option>
+        <option value="">Laptops</option>
+        <option value="">Smartphones</option>
+        <option value="">Smartwatches</option>
+        <option value="">PCs</option>
+        <option value="">Headphones</option>
+        <option value="">Cameras</option>
+        <option value="">USB</option>
+        <option value="">Routers</option>
+        <option value="">TVs</option>
+        <option value="">Servers</option>
       </select>
 
        {/* Filter Brand */}
       <select className="select-box"  onChange={(e) => setFilterBrand(e.target.value)}>
-        <option value="">Select Brand</option>
-        <option value="">A</option>
-        <option value="">B</option>
+        <option  className = "option" value="">Brand</option>
+        <option value="">NVIDIA</option>
+        <option value="">Apple</option>
+        <option value="">Lenovo</option>
+        <option value="">Asus</option>
+        <option value="">Xiaomi</option>
+        <option value="">LG</option>
+        <option value="">Logitech</option>
+        <option value="">Seagate</option>
+        <option value="">Corsair </option>
+        <option value="">AMD</option>
       </select>
 
       {/* Filter Price */}
       <select className="select-box"  onChange={(e) => setFilterPrice(e.target.value)}>
-        <option value="">Select price</option>
+        <option className = "option"   value="">Price</option>
         <option value="">New</option>
-        <option value="">Used</option>
+        <option value="">Like New</option>
+        <option value="">Refurbished</option>
+        <option value="">Used/Good</option>
+        <option value="">Used/Fair</option>
+    
       </select>
 
       {/* Display Filtered Products */}

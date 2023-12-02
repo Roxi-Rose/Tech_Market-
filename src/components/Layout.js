@@ -10,12 +10,15 @@ import Filter from './Filter';
 function Layout() {
   return (
     <section className="layout">
-     <Header/>
-     <Footer/>
-     <SearchBar />
-     <Devices/>
-     <Browse/>
+    <Header/>
+    <Devices/>
+     <div className='row'>
      <Filter/>
+     <SearchBar />
+     </div>
+    
+     <Browse/>
+     <Footer/>
     </section>
   );
 }

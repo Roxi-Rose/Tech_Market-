@@ -1,22 +1,21 @@
 import React from 'react';
 import '../App.css';
 
+
 const Browse = () => {
   const firstRowImages = [
-    { src: '/assets/browse-1.jpeg', alt: 'Device 1', heading: 'Device 1', price: '$100' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
+    { src: '/assets/browse-1.jpg', alt: 'Device 1', heading: 'Laptop', price: '$1,149.00' },
+    { src: '/assets/browse-2.jpg', alt: 'Device 2', heading: 'iPhone', price: '$1,599.00' },
+    { src: '/assets/browse-3.jpg', alt: 'Device 3', heading: 'Smartwatches', price: '$108.32' },
+    { src: '/assets/browse-4.jpg', alt: 'Device 4', heading: 'PC', price: '$1,871.99' },
+    { src: '/assets/browse-5.jpg', alt: 'Device 5', heading: 'Headphone', price: '$100.00' },
   ];
-
   const secondRowImages = [
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    
+    { src: '/assets/browse-6.jpg', alt: 'Device 6', heading: 'Digital Camera', price: '$3,198.00' },
+    { src: '/assets/browse-7.jpg', alt: 'Device 7', heading: 'Hard drive', price: '$950.00' },
+    { src: '/assets/browse-8.jpg', alt: 'Device 8', heading: 'TV', price: '$24,999.99' },
+    { src: '/assets/browse-9.jpg', alt: 'Device 9', heading: 'Router', price: '$149,99' },
+    { src: '/assets/browse-10.jpeg', alt: 'Device 10', heading: 'Echo Dot', price: '$69.99' },
   ];
 
   return (
@@ -24,7 +23,7 @@ const Browse = () => {
       {/* First Row */}
       <div className="row top">
         {firstRowImages.map((image, index) => (
-          <div key={index} className="card">
+          <div key={index} className="card-top">
             <img
               src={image.src}
               alt={image.alt}
@@ -33,17 +32,17 @@ const Browse = () => {
               height={image.height}
             />
             <div className="card-details">
-              <h3>{image.heading}</h3>
-              <p>{image.price}</p>
+              <h3  className="card-heading">{image.heading}</h3>
+              <p className="card-price">{image.price}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Second Row */}
-      <div className="row bottom">
+      <div className="row">
         {secondRowImages.map((image, index) => (
-          <div key={index} className="card">
+          <div key={index} className="card-bottom">
             <img
               src={image.src}
               alt={image.alt}
@@ -52,8 +51,8 @@ const Browse = () => {
               height={image.height}
             />
             <div className="card-details">
-              <h3>{image.heading}</h3>
-              <p>{image.price}</p>
+              <h3 className="card-heading">{image.heading}</h3>
+              <p className="card-price">{image.price}</p>
             </div>
           </div>
         ))}
@@ -61,7 +60,6 @@ const Browse = () => {
     </div>
     
   );
-};
+}
 
 export default Browse;
-
