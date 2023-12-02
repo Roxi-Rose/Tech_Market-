@@ -22,7 +22,7 @@ function ProductListingForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('https://655e14659f1e1093c59a7c39.mockapi.io/shelf/tech-marketplace', formData)
+    axios.post('https://6566ef4764fcff8d730f588d.mockapi.io/web', formData)
       .then(response => {
         console.log('Product listed successfully:', response.data);
         setFormVisible(false);
@@ -45,9 +45,7 @@ function ProductListingForm() {
           <label>Image URL:</label>
           <input type="text" name="image-url" placeholder='Image url' value={formData['image-url']} onChange={handleInputChange} required />
           <label>Category:</label>
-          <input type = "text" name="brand" placeholder='brand' value={formData.category.brand}  onChange={handleInputChange} required />
-         
-          
+          <input type="text" name="category" placeholder='Category' value={formData.category} onChange={handleInputChange} required />
           <button type="submit">List Product</button>
         </form>
       )}
