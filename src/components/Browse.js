@@ -32,9 +32,11 @@ const Browse = () => {
               width={image.width}
               height={image.height}
             />
+            <button className='auction'>$</button>
             <div className="card-details">
               <h3>{image.heading}</h3>
               <p>{image.price}</p>
+              <button>details</button>
             </div>
           </div>
         ))}
@@ -51,9 +53,11 @@ const Browse = () => {
               width={image.width}
               height={image.height}
             />
+            <button className='auction'>$</button>
             <div className="card-details">
               <h3>{image.heading}</h3>
               <p>{image.price}</p>
+              <button>details</button>
             </div>
           </div>
         ))}

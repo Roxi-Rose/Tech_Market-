@@ -1,0 +1,35 @@
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productDetails {
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 60vw;
+    height: 70vh;
+}
+
+.pDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pDisplay button {
+    margin: 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -29,8 +29,13 @@ const Filter = () => {
        {/* Filter Brand */}
       <select className="select-box"  onChange={(e) => setFilterBrand(e.target.value)}>
         <option value="">Select Brand</option>
-        <option value="">A</option>
-        <option value="">B</option>
+        <option value="">Apple</option>
+        <option value="">Samsung</option>
+        <option value="">Sony</option>
+        <option value="">Dell</option>
+        <option value="">Acer</option>
+        <option value="">Google</option>
+        <option value="">Microsoft</option>
       </select>
 
       {/* Filter Price */}
@@ -40,7 +45,7 @@ const Filter = () => {
         <option value="">Used</option>
       </select>
 
-      {/* Display Filtered Products */}
+      {/* Display Filtered Products
       <div className="filtered-products">
         {filteredProducts.map((product) => (
           <div  key={product.id}>
@@ -50,7 +55,7 @@ const Filter = () => {
             <p>{`Price: $${product.price}`}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
