@@ -33,6 +33,7 @@ const Filter = ({ products, setFilteredProducts }) => {
         <option value="">MSI</option>
         <option value="">OnePlus</option>
         <option value="">Canon</option>
+        <option value="">Others</option>
       </select>
 
       {/* Filter Condition */}
