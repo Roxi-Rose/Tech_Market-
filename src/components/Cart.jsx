@@ -1,27 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "./Cart.css";
 
 function Cart() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://6566ef4764fcff8d730f588d.mockapi.io/cart')
+      .then(response => {
+        setProducts(response.data);
+      })
+      .catch(error => console.error('Error fetching products:', error));
+  }, []);
+
+  const handleRemoveClick = (productId) => {
+    const removedProduct = products.find(product => product.id === productId);
+    axios.post('https://6566ef4764fcff8d730f588d.mockapi.io/web', removedProduct)
+      .then(response => {
+        console.log('Product listed successfully:', response.data);
+        // Update the product list after a successful listing
+        setProducts(prevProducts => prevProducts.filter(product => product.id !== productId));
+      })
+      .catch(error => console.error('Error listing product:', error));
+
+    axios.delete(`https://6566ef4764fcff8d730f588d.mockapi.io/cart/${productId}`)
+      .then(response => {
+        console.log('Product removed successfully:', response.data);
+      })
+      .catch(error => console.error('Error removing product:', error));
+  };
+
   return (
     <div className='parent'>
-    <div className='container'>
-      <h2 className="title">Your Cart</h2>
-      <section className="product">
-        <img src="https://m.media-amazon.com/images/I/51uD1lmrV8L._AC_SX425_.jpg" alt="unable to load" width={100} height={100}/>
-        <article className="details">
-          <h3 className="name">Apple iPhone 14 Pro Max</h3>
-          <p className="details">6.7-inch Super Retina XDR display. Dynamic Island. 48MP Main camera for up to 4x greater resolution. </p>
-        </article>
-        <h3 className="price">$ 2699</h3>
-        <button className="remove">X</button>
-      </section>
-      <section className="checkout">
-        <button className="pay">Checkout</button>
-        <h3 className="total">$ 3850</h3>
-      </section>
+      <div className='container'>
+        <h2 className="title">Your Cart</h2>
+        {products.map(product => (
+          <section className="product" key={product.id}>
+            <img 
+            src={product['image-url']} 
+            alt={product.name} 
+            className="card-img"
+            width="100"
+            height="100"/>
+            <article className="details">
+              <h3 className="name">{product.name}</h3>
+              <p className="details">{product.description}</p>
+            </article>
+            <h3 className="price">${product.price}</h3>
+            <button className="remove" onClick={() => handleRemoveClick(product.id)}>X</button>
+          </section>
+        ))}
+        <section className="checkout">
+          <button className="pay">Checkout</button>
+          <h3 className="total">$ 3850</h3>
+        </section>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;
