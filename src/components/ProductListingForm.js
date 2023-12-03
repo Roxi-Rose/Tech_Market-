@@ -80,10 +80,14 @@ function ProductListingForm() {
           <label>Image URL:</label>
           <input type="text" name="image-url" placeholder='Image url' value={formData['image-url']} onChange={handleInputChange} required />
           <label>Category:</label>
+
      
-<input type="text" name="brand" placeholder='brand' value={formData.category.brand} onChange={handleInputChange} required />
+           <input type="text" name="brand" placeholder='brand' value={formData.category.brand} onChange={handleInputChange} required />
 <input type="text" name="type" placeholder='type' value={formData.category.type} onChange={handleInputChange} required />
 <input type="text" name="condition" placeholder='condition' value={formData.category.condition} onChange={handleInputChange} required />
+
+
+          <input type="text" name="category" placeholder='Category' value={formData.category} onChange={handleInputChange} required />
 
           <button type="submit">List Product</button>
         </form>
