@@ -1,0 +1,51 @@
+.parent {
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.product img {
+    width: 115px;
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    margin: 2px;
+    border: 1px solid rgb(129, 211, 255);
+    border-radius: 8px;
+    box-shadow: 0 0px 8px rgb(129, 211, 255);
+}
+
+.product button {
+    color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.checkout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.checkout button {
+    height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
