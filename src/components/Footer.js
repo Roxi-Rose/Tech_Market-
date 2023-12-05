@@ -1,3 +1,4 @@
+
 import React from 'react';
 import '../App.css';
 
@@ -7,7 +8,7 @@ function Footer() {
         <section className="footer-layout">
           <div>
             <img src="/assets/logo.png" alt=""/>
-            <p>&copy; 2023Team#2 </p>
+
           </div>
           <article id="list-1">
             <ul>
