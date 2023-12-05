@@ -66,6 +66,13 @@ header {
 .sign-up {
     display: flex;
     align-items: center;
+    gap: 20px;
+}
+
+.sign-up button {
+    cursor: pointer;
+    border-radius: 20px;
+    height: 30px;
 }
 
 .header-logo {
@@ -128,6 +135,17 @@ nav a:active {
     font-size: 17px;
 }
 
+.cart-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -60px;
+    margin-left: -30px;
+    border-radius: 11px;
+    background: rgb(1, 1, 169);
+    font-size: 20px;
+}
+
 footer {
     background-image: url('../public/assets/background.jpg');
     background-position: center;
@@ -135,56 +153,48 @@ footer {
     border-top: 2px solid #000000;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    bottom: 0; 
     width: 100%;
     height: 9vh;
-    padding: 0px;
     border: 2px solid #000000;
     box-shadow: 3px 3px 12px rgb(255, 255, 255);
 }
 
 .footer-layout {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
-    color: #ffffff;
-    text-align: left;
     font-size: 13px;
     font-weight: 500;
 }
 
 #list-1 {
-    flex: 1;
+    flex: 2;
     text-align: left;
-    padding: 0px 20px 55px;
+    padding: 0px 42px 0px;
 }
 
 #list-2 {
     text-align: left;
-    padding: 0px 50px 55px;
+    padding: 10px 20px 5px;
     float: center;
 }
 
 #list-3 {
-    flex: 1;
+    flex: 2;
     text-align: left;
-    padding: 0px 60px 55px;
+    padding: 0px 20px 5px;
 }
 
 #list-4 {
-    flex: 1;
+    flex: 2;
     text-align: left;
-    padding: 0px 0px 55px;
+    padding: 0px 0px 5px;
 }
 
 footer img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border-radius: 60px;
     border: 2px solid white;
     box-shadow: 0px 0px 5px rgb(255, 255, 255);
@@ -192,13 +202,13 @@ footer img {
 
 .search-container {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    margin-top: 12px;
-    margin-bottom: 1px;
+    margin-top: 10px;
     width:69%;
-    padding: 0 10px;
+    margin-left: 400px;
 }
+
+
 
 .search-bar {
     padding: 8px;
@@ -259,7 +269,7 @@ footer img {
 }
 
 
-.card-top {
+.card{
     border: 3px solid #fffefe;
     border-style: groove;
     margin:  20px;
@@ -273,31 +283,7 @@ footer img {
 }
 
 
-.card-top img {
-    width: 115px;
-    height: 120px;
-    border-radius: 8px;
-    margin-bottom: 30px; 
-    margin: 2px;
-    border: 1px solid rgb(129, 211, 255);
-    border-radius: 8px;
-    box-shadow: 0 0px 8px rgb(129, 211, 255);
-}
-
-.card-bottom {
-    border: 3px solid #fffefe;
-    border-style: groove;
-    margin:  20px;
-    margin-bottom: 120px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.2);
-    width: 180px;
-    height: 250px;
-    padding: 10px;
-}
-
-
-.card-bottom img {
+.card img {
     width: 115px;
     height: 120px;
     border-radius: 8px;
@@ -322,8 +308,6 @@ footer img {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Add this to your CSS file */
-
 .card-heading {
     color: #ffffff; 
     font-size: 18px; 
@@ -336,45 +320,57 @@ footer img {
     font-size: 15px; 
   }
   
-.filter-container {
-    margin-left: 1px;
-    position: relative;
-    top: 1px; 
-    margin-bottom: 8px;
-   
-}
+/* .select-box {
+    width: 19%; 
+    padding: 3px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 15px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: none; 
+    background-color: rgb(255, 255, 255);
+} */
+
 .select-box {
     width: 29%; 
     padding: 3px;
     font-size: 14px;
     border-radius: 5px;
-    margin-left: 15px;
+    margin-left: 10px;
     font-weight: 600;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     border: none; 
     background-color: rgb(255, 255, 255);
-
 }
 
-.select-box option {
+/* .select-box option {
     background-color: rgb(255, 255, 255);
     color: #000000;
     font-size: 12px;
     font-family: monospace;
+} */
+
+
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 25px; 
 }
-
-.select-box:hover,
-.select-box:active,
-.select-box:focus {
-    background-color: rgba(42, 211, 12, 0.687);
-    color: rgb(255, 255, 255);
+  
+.apply-button {
+    position: relative;
+    bottom: 25px;
+    padding: 5px 8px; 
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #08d80f;
+    color: #04003d;
+    cursor: pointer;
+    margin-right: 200px;
 }
-
-.option {
-    text-align: center;
-    
-  }
-
-
-
-
+  
+ 
