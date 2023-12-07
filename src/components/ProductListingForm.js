@@ -58,6 +58,7 @@ function ProductListingForm() {
     e.preventDefault();
 
     axios.post('https://6566ef4764fcff8d730f588d.mockapi.io/web', formData)
+   
       .then(response => {
         console.log('Product listed successfully:', response.data);
         setFormVisible(false);

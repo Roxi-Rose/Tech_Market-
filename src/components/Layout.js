@@ -39,7 +39,6 @@ function Layout() {
 
 
   return (
-    
       <section className="layout">
         <Header />
         <SearchBar />
