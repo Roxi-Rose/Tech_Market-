@@ -66,6 +66,7 @@ let ProductGallery = () => {
   );
 };
 
+
 function Layout() {
   const [products, setProducts] = useState([]);  
   const [filtered, setFilteredProducts] = useState([]);
@@ -98,7 +99,7 @@ function Layout() {
 
 
   return (
-    
+
       <section className="layout">
         <Header />
         <Devices />

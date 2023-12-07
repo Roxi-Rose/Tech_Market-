@@ -71,6 +71,7 @@ import "../App.css";
 const Browse = ({products}) => {
   
   return (
+
     <div className="-container">
       <section className="filtered-row">
       {products.map((product, index) => (
