@@ -14,19 +14,16 @@ function Layout() {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   return (
-    <Router>
+  
       <section className="layout">
         <Header />
         <SearchBar />
         <Devices />
-        <Routes>
-          <Route path="/" element={<Browse products={filteredProducts} />} />
-          <Route path="/filter" element={<Filter setFilteredProducts={setFilteredProducts} />} />
-        </Routes>
+       
         <ProductListingForm/>
         <Footer />
       </section>
-    </Router>
+  
   );
 }
 
