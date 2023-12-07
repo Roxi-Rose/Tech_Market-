@@ -71,19 +71,19 @@ import "../App.css";
 const Browse = ({products}) => {
   
   return (
-    <div className="browse-container">
-      <section className="cards">
+    <div className="-container">
+      <section className="filtered-row">
       {products.map((product, index) => (
-        <div key={index} className="card">
+        <div key={index} className="filtered-card">
           <img
             src={product['image-url']}
             alt={product.name}
-            className="card-img"
+            className="filtered-img"
             width="300"
             height="200"
           />
           <button className='auction'>$</button>
-          <div className="card-details">
+          <div className="filtered-details">
             <h3>{product.name}</h3>
             <p>{`$${product.price}`}</p>
             <button>details</button>
