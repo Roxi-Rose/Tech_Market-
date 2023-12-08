@@ -1,42 +1,27 @@
-/* auction.css */
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* Styles for the title */
-.title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  /* Styles for the device container */
-  .device {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Styles for the bid section */
-  .bid {
-    text-align: center;
-  }
-  
-  /* Styles for the input field */
-  input[type="text"] {
-    padding: 8px;
-    margin-bottom: 10px;
-    width: 200px;
-  }
-  
-  /* Styles for the 'Set' button */
-  button {
-    padding: 8px 20px;
-    background-color: #1c1e1f;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Styles for the message paragraph */
-  p {
-    color: rgb(83, 70, 70);
-    font-style: italic;
-  }
-  
+.productDetails {
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 60vw;
+    height: 70vh;
+}
+
+.pDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

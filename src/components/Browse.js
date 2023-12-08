@@ -9,6 +9,10 @@ const Browse = (props) => {
   const handleClickDetails = (id) => {
     navigate(`/details/${id}`);
   };
+
+  const handleClickAuction = (id) => {
+    navigate(`/auction/${id}`);
+  };
   
   return (
 
@@ -23,7 +27,7 @@ const Browse = (props) => {
             width="300"
             height="200"
           />
-          <button className='auction'>$</button>
+          <button className='auction' onClick={() => handleClickAuction(product.id)}>$</button>
           <div className="filtered-details">
             <h3>{product.name}</h3>
             <p>{`$${product.price}`}</p>

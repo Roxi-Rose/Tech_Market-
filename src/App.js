@@ -21,7 +21,7 @@ function App() {
     <Router>
       <Routes>
       <Route path='/' element={<Layout products={products} />} />
-        <Route path='/auction' element={<Auction />}></Route>
+        <Route path='/auction/:id' element={<Auction products={products} />}></Route>
         <Route path='/details/:id' element={<ProductDetails products={products} />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>
