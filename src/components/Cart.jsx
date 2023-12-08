@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 import "./Cart.css";
@@ -6,6 +7,7 @@ import "./Cart.css";
 function Cart() {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('https://6566ef4764fcff8d730f588d.mockapi.io/cart')
@@ -62,6 +64,7 @@ function Cart() {
     <div className='parent'>
       <div className='container'>
         <h2 className="title">Your Cart</h2>
+        <button className="home" onClick={() => navigate('/')}>Home</button>
         {products.map(product => (
           <section className="product" key={product.id}>
             <img
