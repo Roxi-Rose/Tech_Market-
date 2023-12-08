@@ -53,8 +53,8 @@ function Auction(props) {
           <button className="home" onClick={() => navigate('/')}>
             Home
           </button>
-          <p>{All Bids = [${allBids}]}</p>
-          <h5>{Current Highest = ${highest}}</h5>
+          <p>{`All Bids = [${allBids}]`}</p>
+          <h5>{`Current Highest = ${highest}`}</h5>
           <article className="form">
             <label>Enter Bid:</label>
             <input

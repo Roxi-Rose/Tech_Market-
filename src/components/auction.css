@@ -1,27 +1,27 @@
 .parent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .productDetails {
-  display: flex;
-  background-color: aliceblue;
-  border-radius: 20px;
-  width: 60vw;
-  height: 70vh;
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 60vw;
+    height: 70vh;
 }
 
 .pDisplay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .pDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -67,28 +67,15 @@ let ProductGallery = () => {
 };
 
 
-function Layout() {
-  const [products, setProducts] = useState([]);  
+function Layout(props) {
   const [filtered, setFilteredProducts] = useState([]);
-
-
-    //useState for each filter...
     const [filterType, setFilterType] = useState('');
     const [filterBrand, setFilterBrand] = useState('');
     const [filterCondition, setFilterCondition] = useState('');
 
-
-    useEffect(() => {
-    // Fetch data from the API endpoint
-    fetch('https://6566ef4764fcff8d730f588d.mockapi.io/web')
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error('Error fetching data:', error));
-  }, []);
-
      const handleFilter = () => {
       setFilteredProducts(
-        products.filter(
+        props.products.filter(
           (product) =>
             (!filterType || product.category.type === filterType) &&
             (!filterBrand || product.category.brand === filterBrand) &&
@@ -97,18 +84,16 @@ function Layout() {
        );
   }; 
 
-
   return (
-
       <section className="layout">
         <Header />
-        <Devices />
-        <div className='row'>
         <SearchBar />
+        <Devices />
+      
         <section className="filter_options">
           {/* Filter Type */}
           <select className="select-box"  onChange={(e) => setFilterType(e.target.value)}>
-            <option className='option' value=""> Type</option>
+            <option value="">Select Type</option>
             <option value="laptop">laptop</option>
             <option value="mobile">mobile</option>
             <option value="camera">camera</option>
@@ -117,7 +102,7 @@ function Layout() {
 
           {/* Filter Brand */}
           <select className="select-box"  onChange={(e) => setFilterBrand(e.target.value)}>
-            <option className='option' value=""> Brand</option>
+            <option value="">Select Brand</option>
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
             <option value="Sony">Sony</option>
@@ -129,15 +114,15 @@ function Layout() {
 
           {/* Filter Price */}
           <select className="select-box"  onChange={(e) => setFilterCondition(e.target.value)}>
-            <option className='option' value="">Condition</option>
+            <option value="">Condition</option>
             <option value="new">new</option>
             <option value="used">used</option>
           </select>
-          <button className='apply-button' onClick={() => handleFilter(products)}>Apply</button>
+
+          <button onClick={() => handleFilter(props.products)}>Apply Filter</button>
         </section>
-       </div>
-        <ProductGallery />
-        <Browse products={products.length === filtered.length? products : filtered} /> 
+      
+        <Browse products={props.products.length === filtered.length ? props.products : filtered} />
         <ProductListingForm/>
         <Footer />
       </section>
