@@ -11,6 +11,7 @@ import ProductDetails from './components/ProductDetails';
 
 function App() {
   return (
+
     <BrowserRouter>
     <Routes>
       <Route path = '/' element={<Layout/>}/>

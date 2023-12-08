@@ -1,51 +1,76 @@
 import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import './auction.css';
 
-function Auction() {
-    // State variables to manage bid data
-    const [highestBid, setHighestBid] = useState(0); // Tracks the highest bid
-    const [allBids, setAllBids] = useState([1120, 1250, 1220]); // Contains all bids
-    const [isGreater, setIsGreater] = useState(true); // Indicates if the entered bid is greater
+function Auction(props) {
+  const { id } = useParams();
+  const product = props.products.find((p) => p.id === id);
+  const navigate = useNavigate();
 
-    // Function to handle placing a bid
-    const placeBid = (e) => {
-        // Update all bids with the new bid value
-        setAllBids([...allBids, e.target.value]); // Incorrect code - needs correction
-        // Check if the entered bid is greater than any existing bid
-        allBids.forEach(ele => {
-            if (ele > e.target.value) {
-                setIsGreater(false); // If any existing bid is greater, set isGreater to false
-            }
-        })
-        // If the entered bid is greater than all existing bids, update the highest bid
-        if (isGreater) {
-            setHighestBid(e.target.value);
-        }
+  const [allBids, setAllBids] = useState([1080, 1120, 980, 1170]);
+  const [highest, setHighest] = useState(product.price);
+  const [userBid, setUserBid] = useState('');
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const handleInputChange = (e) => {
+    setUserBid(e.target.value);
+    setStatusMessage('');
+  };
+
+  const handlePlaceBid = () => {
+    const bidValue = parseInt(userBid);
+
+    if (bidValue <= highest) {
+      setStatusMessage('Bid value is less than the current highest bid.');
+    } else {
+      setAllBids((prevBids) => [...prevBids, bidValue]);
+      setHighest(bidValue);
+      setStatusMessage('Bid placed successfully.');
     }
+  };
 
-    return (
-        <div>
-            {/* Auction interface */}
-            <h1 className='title'> Auction</h1>
-            <div className='device'>
-                <img src="" alt="" />
-                <h4>iPhone</h4>
-                <h2>$1550</h2>
-            </div>
-            <div className='bid'>
-                {/* Display the current highest bid */}
-                <h4 className='highest'>`Current highest ${highestBid}`</h4>
-                {/* Form to enter a bid */}
-                <form action="submit" onSubmit={placeBid}>
-                    {/* Input field for entering a bid */}
-                    <input type="text" placeholder='enter bid value' /> {/* Needs correction */}
-                    {/* Button to submit the bid */}
-                    <button>Set</button> {/* Needs correction */}
-                </form>
-                {/* Message for bids lower than the current highest bid */}
-                <p>Your bid value is less than current highest</p>
-            </div>
-        </div>
-    )
+  if (!product) {
+    alert('Product not found');
+    navigate('/');
+    return null;
+  }
+
+  return (
+    <div className="parent">
+      <div className="productDetails">
+        <section className="pDisplay">
+          <img
+            src={product['image-url']}
+            alt={product.name}
+            className="card-img"
+            width="300"
+            height="200"
+          />
+          <h4 className="pName">{product.name}</h4>
+          <h3>${product.price}</h3>
+        </section>
+        <section className="pDetails">
+          <button className="home" onClick={() => navigate('/')}>
+            Home
+          </button>
+          <p>{All Bids = [${allBids}]}</p>
+          <h5>{Current Highest = ${highest}}</h5>
+          <article className="form">
+            <label>Enter Bid:</label>
+            <input
+              type="number"
+              name="price"
+              placeholder="Bid Value"
+              value={userBid}
+              onChange={handleInputChange}
+            />
+            <button onClick={handlePlaceBid}>Place Bid</button>
+          </article>
+          {statusMessage && <h5 className="status">{statusMessage}</h5>}
+        </section>
+      </div>
+    </div>
+  );
 }
 
 export default Auction;
