@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './auction.css';
 
@@ -12,6 +12,24 @@ function Auction(props) {
   const [userBid, setUserBid] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
 
+  useEffect(() => {
+    // Update the product price in the API when highest bid changes
+    if (highest > product.price) {
+      fetch(`https://6566ef4764fcff8d730f588d.mockapi.io/web/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          price: highest.toString(),
+        }),
+      })
+        .then((response) => response.json())
+        .then(() => console.log('Product price updated successfully'))
+        .catch((error) => console.error('Error updating product price:', error));
+    }
+  }, [highest, id, product.price]);
+
   const handleInputChange = (e) => {
     setUserBid(e.target.value);
     setStatusMessage('');
@@ -20,12 +38,12 @@ function Auction(props) {
   const handlePlaceBid = () => {
     const bidValue = parseInt(userBid);
 
-    if (bidValue <= highest) {
-      setStatusMessage('Bid value is less than the current highest bid.');
-    } else {
+    if (bidValue > highest) {
       setAllBids((prevBids) => [...prevBids, bidValue]);
       setHighest(bidValue);
       setStatusMessage('Bid placed successfully.');
+    } else {
+      setStatusMessage('Bid value is less than the current highest bid.');
     }
   };
 
