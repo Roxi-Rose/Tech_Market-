@@ -121,7 +121,8 @@ function Layout(props) {
 
           <button onClick={() => handleFilter(props.products)}>Apply Filter</button>
         </section>
-      
+
+        <ProductGallery />
         <Browse products={props.products.length === filtered.length ? props.products : filtered} />
         <ProductListingForm/>
         <Footer />
