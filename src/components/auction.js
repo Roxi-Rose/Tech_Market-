@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './auction.css';
+import Header from './Header';
+import Devices from './Devices';
+import Footer from './Footer';
 
 function Auction(props) {
   const { id } = useParams();
@@ -36,21 +39,24 @@ function Auction(props) {
   }
 
   return (
-    <div className="parent">
-      <div className="productDetails">
-        <section className="pDisplay">
+    <div>
+      <Header/>
+    <Devices/>
+    <div className="pparent">
+      <div className="pproductDetails">
+        <section className="ppDisplay">
           <img
             src={product['image-url']}
             alt={product.name}
-            className="card-img"
-            width="300"
-            height="200"
+            className="ccard-img"
+            // width="300"
+            // height="300"
           />
           <h4 className="pName">{product.name}</h4>
-          <h3>${product.price}</h3>
+          <h3 className='pPrice'>${product.price}</h3>
         </section>
-        <section className="pDetails">
-          <button className="home" onClick={() => navigate('/')}>
+        <section className="ppDetails">
+          <button className="home-btn" onClick={() => navigate('/')}>
             Home
           </button>
           <p>{`All Bids = [${allBids}]`}</p>
@@ -64,11 +70,13 @@ function Auction(props) {
               value={userBid}
               onChange={handleInputChange}
             />
-            <button onClick={handlePlaceBid}>Place Bid</button>
+            <button className = 'bid-btn' onClick={handlePlaceBid}>Place Bid</button>
           </article>
           {statusMessage && <h5 className="status">{statusMessage}</h5>}
         </section>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }
