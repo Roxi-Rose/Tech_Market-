@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path='/' element={<Layout products={products} />} />
+        <Route path='/' element={<Layout products={products} />} />
         <Route path='/auction/:id' element={<Auction products={products} />}></Route>
         <Route path='/details/:id' element={<ProductDetails products={products} />} />
         <Route path='/cart' element={<Cart />} />

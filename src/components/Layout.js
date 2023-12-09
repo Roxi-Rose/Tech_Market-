@@ -66,28 +66,16 @@ let ProductGallery = () => {
   );
 };
 
-function Layout() {
-  const [products, setProducts] = useState([]);  
-  const [filtered, setFilteredProducts] = useState([]);
-
-
+function Layout(props) {
+    const [filtered, setFilteredProducts] = useState([]);
     //useState for each filter...
     const [filterType, setFilterType] = useState('');
     const [filterBrand, setFilterBrand] = useState('');
     const [filterCondition, setFilterCondition] = useState('');
 
-
-    useEffect(() => {
-    // Fetch data from the API endpoint
-    fetch('https://6566ef4764fcff8d730f588d.mockapi.io/web')
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error('Error fetching data:', error));
-  }, []);
-
      const handleFilter = () => {
       setFilteredProducts(
-        products.filter(
+        props.products.filter(
           (product) =>
             (!filterType || product.category.type === filterType) &&
             (!filterBrand || product.category.brand === filterBrand) &&
@@ -132,11 +120,11 @@ function Layout() {
             <option value="new">new</option>
             <option value="used">used</option>
           </select>
-          <button className='apply-button' onClick={() => handleFilter(products)}>Apply</button>
+          <button className='apply-button' onClick={() => handleFilter(props.products)}>Apply</button>
         </section>
        </div>
         <ProductGallery />
-        <Browse products={products.length === filtered.length? products : filtered} /> 
+        <Browse products={props.products.length === filtered.length? props.products : filtered} /> 
         <ProductListingForm/>
         <Footer />
       </section>
