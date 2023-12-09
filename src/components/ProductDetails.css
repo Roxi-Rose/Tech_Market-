@@ -2,34 +2,91 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.productDetails {
+  }
+  
+  .productDetails {
     display: flex;
-    background-color: aliceblue;
+    margin-top: 40px; 
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.663); 
     border-radius: 20px;
-    width: 60vw;
-    height: 70vh;
-}
-
-.pDisplay {
+    width: 55vw;
+    height: 67vh;
+    border: 2px solid #ffffff; 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); 
+  }
+  
+  
+  .pDisplay {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-}
-
-.pDisplay button {
-    margin: 20px;
+  }
+  
+  .pDisplay img {
+    border: 2px solid #ffffffcc;
+    border-radius: 10px;
+    margin-top: 40px; 
+    margin-bottom: 10px; 
+    box-shadow: 2px 5px 30px rgba(255, 255, 255, 0.7); 
+  }
+  
+  .pDisplay button {
+    margin: 2px;
     width: 100px;
-    height: 30px;
+    height: 40px;
     border-radius: 10px;
     cursor: pointer;
-}
+    background-color: #00d21c; 
+    color: #fff; 
+    border: none;
+    transition: background-color 0.3s, color 0.3s; 
+    font-weight: 600;
+    position: relative;
+    bottom: 20px
+  }
+  
+  .pDisplay button:hover {
+    background-color: #009f28;
+    color: #fff; 
+  }
 
-.pDetails {
+  .home {
+  margin-bottom: 20px; 
+  margin-left: 360px; 
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 700;
+  }
+  
+  .home:hover {
+    background-color: #2980b9;
+    color: #fff;
+  }
+  
+  .pDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: serif;
+    font-size: 17px;
+    margin-right: 10px; 
+    margin-bottom: 110px;
+  }
+
+.parent .productDetails .pDisplay .card-img {
+  width: 230px; 
+  height:270px; 
+  border: 2px solid #ffffffcc; 
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 50px; 
 }
