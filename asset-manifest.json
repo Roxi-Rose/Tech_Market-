@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/github.io/Tech_Market-/static/css/main.12bea0f0.css",
-    "main.js": "/github.io/Tech_Market-/static/js/main.64a231e4.js",
-    "static/js/787.31b5becb.chunk.js": "/github.io/Tech_Market-/static/js/787.31b5becb.chunk.js",
-    "static/media/background.jpg": "/github.io/Tech_Market-/static/media/background.df2c162c9e1d6e135d5e.jpg",
-    "index.html": "/github.io/Tech_Market-/index.html",
-    "main.12bea0f0.css.map": "/github.io/Tech_Market-/static/css/main.12bea0f0.css.map",
-    "main.64a231e4.js.map": "/github.io/Tech_Market-/static/js/main.64a231e4.js.map",
-    "787.31b5becb.chunk.js.map": "/github.io/Tech_Market-/static/js/787.31b5becb.chunk.js.map"
+    "main.css": "/Tech_Market-/static/css/main.a221f90c.css",
+    "main.js": "/Tech_Market-/static/js/main.bb4cd77c.js",
+    "static/js/787.31b5becb.chunk.js": "/Tech_Market-/static/js/787.31b5becb.chunk.js",
+    "static/media/background.jpg": "/Tech_Market-/static/media/background.df2c162c9e1d6e135d5e.jpg",
+    "index.html": "/Tech_Market-/index.html",
+    "main.a221f90c.css.map": "/Tech_Market-/static/css/main.a221f90c.css.map",
+    "main.bb4cd77c.js.map": "/Tech_Market-/static/js/main.bb4cd77c.js.map",
+    "787.31b5becb.chunk.js.map": "/Tech_Market-/static/js/787.31b5becb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12bea0f0.css",
-    "static/js/main.64a231e4.js"
+    "static/css/main.a221f90c.css",
+    "static/js/main.bb4cd77c.js"
   ]
 }
