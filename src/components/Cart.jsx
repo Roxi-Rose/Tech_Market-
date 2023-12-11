@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 import "./Cart.css";
+import Header from './Header';
+import Devices from './Devices';
+import Footer from './Footer';
 
 function Cart() {
   const [products, setProducts] = useState([]);
@@ -61,12 +64,15 @@ function Cart() {
   };
   
   return (
-    <div className='parent'>
-      <div className='container'>
-        <h2 className="title">Your Cart</h2>
-        <button className="home" onClick={() => navigate('/')}>Home</button>
+    <div>
+    <Header/>
+    <Devices/>
+    <div className='Parent'>
+      <div className='Container'>
+      <h2 className="title">≈~Your Cart</h2>
+        <button className="Home" onClick={() => navigate('/')}>Home</button>
         {products.map(product => (
-          <section className="product" key={product.id}>
+          <section className="cartProduct" key={product.id}>
             <img
               src={product['image-url']}
               alt={product.name}
@@ -78,8 +84,10 @@ function Cart() {
               <h3 className="name">{product.name}</h3>
               <p className="details">{product.description}</p>
             </article>
-            <h3 className="price">${product.price}</h3>
-            <button className="remove" onClick={() => handleRemoveClick(product.id)}>X</button>
+            <div className="price-remove-container">
+    <h3 className="price">${product.price}</h3>
+    <button className="remove" onClick={() => handleRemoveClick(product.id)}>X</button>
+  </div>
           </section>
         ))}
         <section className="checkout">
@@ -87,6 +95,8 @@ function Cart() {
           <h3 className="total">${total}</h3>
         </section>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }

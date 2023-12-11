@@ -44,6 +44,7 @@ export default function ProductDetails(props) {
     <div className="parent">
       <div className="productDetails">
         <section className="pDisplay">
+        <h5>≈~Product Details</h5>
           <img
             src={product['image-url']}
             alt={product.name}
@@ -53,12 +54,14 @@ export default function ProductDetails(props) {
           />
           <button onClick={() => handleAddToCart(product.id)}>Add to Cart</button>
         </section>
-        <section className="pDetails">
+        <section 
+        className="pDetails">
           <button className="home" onClick={() => navigate('/')}>Home</button>
+      
           <h4 className="pName">{product.name}</h4>
           <h2>${product.price}</h2>
-          <p>{product.description}</p>
-          <h5>{product.category.condition}</h5>
+          <p className='description'>{product.description}</p>
+          <h5>⁘{product.category.condition}</h5>
         </section>
       </div>
     </div>
