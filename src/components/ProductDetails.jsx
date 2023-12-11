@@ -1,25 +1,71 @@
-import React from 'react'
-import './ProductDetails.css'
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
+import './ProductDetails.css';
+import Header from './Header';
+import Devices from './Devices';
+import Footer from './Footer';
+export default function ProductDetails(props) {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
 
-export default function ProductDetails() {
+  // Find the product with the given ID
+  const product = props.products.find((p) => p.id === id);
+
+  if (!product) {
+    alert('Product not found');
+    navigate('/');
+    return null;
+  }
+
+  const handleAddToCart = (id) => {
+
+    axios.post('https://6566ef4764fcff8d730f588d.mockapi.io/cart', props.products.id)
+      .then(response => {
+        setProducts(prevProducts => {
+          const updatedProducts = prevProducts.filter(products => products.id !== id);
+          alert('Successfully added to cart');
+          return updatedProducts;
+        });
+      })
+      .catch(error => console.error('Error listing product:', error));
+  
+    axios.delete(`https://6566ef4764fcff8d730f588d.mockapi.io/web/${id}`)
+      .then(response => {
+      })
+      .catch(error => console.error('Error removing product:', error));
+    }
+
   return (
+    <div>
+    <Header/>
+    <Devices/>
     <div className="parent">
-        <div className='productDetails'>
-            <secction className="pDisplay">
-                <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/h/d/9/-original-imagtc2qzgnnuhxh.jpeg?q=70" alt="unable to load" />
-                <button>Add to Cart</button>
-            </secction>
-            <section className="pDetails">
-                <h4 className="pName">APPLE iPhone 15 (Black, 256 GB)</h4>
-                <h2>$1450</h2>
-                <p>256 GB ROM
-                    15.49 cm (6.1 inch) Super Retina XDR Display
-                    48MP + 12MP | 12MP Front Camera
-                    A16 Bionic Chip, 6 Core Processor Processor
-                </p>
-                <h5>Current value is greater than your value</h5>
-            </section>
-        </div>
+      <div className="productDetails">
+        <section className="pDisplay">
+        <h5>≈~Product Details</h5>
+          <img
+            src={product['image-url']}
+            alt={product.name}
+            className="card-img"
+            // width="50"
+            // height="50"
+          />
+          <button onClick={() => handleAddToCart(product.id)}>Add to Cart</button>
+        </section>
+        <section 
+        className="pDetails">
+          <button className="home" onClick={() => navigate('/')}>Home</button>
+      
+          <h4 className="pName">{product.name}</h4>
+          <h2>${product.price}</h2>
+          <p className='description'>{product.description}</p>
+          <h5>⁘{product.category.condition}</h5>
+        </section>
+      </div>
     </div>
-  )
+    <Footer/>
+    </div>
+  );
 }

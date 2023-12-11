@@ -1,8 +1,14 @@
 import React from 'react';
 import '../App.css';
+import { useNavigate } from 'react-router-dom';
 // import logo from '../assets/logo.png';
 
 function Header() {
+  const navigate = useNavigate();
+  const handleCartClick = () => {
+    navigate('/cart');
+  }
+
   return (
     <header className="header">
     <div className="header-logo">
@@ -20,7 +26,7 @@ function Header() {
     </div>
     <div className="sign-up">
       <button>Login</button>
-      <img src="/assets/shop.jpg" alt="Shop Icon" className="shop-icon" />
+      <img src="/assets/shop.jpg" alt="Shop Icon" className="shop-icon" onClick={handleCartClick}/>
       <div className="cart-count">0</div>
     </div>
     </header>

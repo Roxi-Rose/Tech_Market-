@@ -1,71 +1,45 @@
 import React from 'react';
-import '../App.css';
+import "../App.css";
+import { useNavigate } from 'react-router-dom';
 
-const Browse = () => {
-  const firstRowImages = [
-    { src: '/assets/browse-1.jpeg', alt: 'Device 1', heading: 'Device 1', price: '$100' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-  ];
 
-  const secondRowImages = [
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    { src: '/assets/browse-1.jpeg', alt: 'Device 6', heading: 'Device 6', price: '$150' },
-    
-  ];
+const Browse = (props) => {
+  const navigate = useNavigate();
 
+  const handleClickDetails = (id) => {
+    navigate(`/details/${id}`);
+  };
+
+  const handleClickAuction = (id) => {
+    navigate(`/auction/${id}`);
+  };
+  
   return (
-    <div>
-      {/* First Row */}
-      <div className="row top">
-        {firstRowImages.map((image, index) => (
-          <div key={index} className="card">
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="item-img"
-              width={image.width}
-              height={image.height}
-            />
-            <button className='auction'>$</button>
-            <div className="card-details">
-              <h3>{image.heading}</h3>
-              <p>{image.price}</p>
-              <button>details</button>
-            </div>
+  
+    <div className="-container">
+       
+      <section className="filtered-row">
+      {props.products.map((product, index) => (
+        <div key={index} className="filtered-card">
+          <button className='auction' onClick={() => handleClickAuction(product.id)}>$</button>
+          <img
+            src={product['image-url']}
+            alt={product.name}
+            className="filtered-img"
+            width="300"
+            height="200"
+          />
+          <div className="filtered-details">
+            <h3>{product.name}</h3>
+            <p>{`$${product.price}`}</p>
+            <button className = 'detail-btn'onClick={() => handleClickDetails(product.id)}>Details 📄</button>
           </div>
-        ))}
-      </div>
-
-      {/* Second Row */}
-      <div className="row bottom">
-        {secondRowImages.map((image, index) => (
-          <div key={index} className="card">
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="card-img"
-              width={image.width}
-              height={image.height}
-            />
-            <button className='auction'>$</button>
-            <div className="card-details">
-              <h3>{image.heading}</h3>
-              <p>{image.price}</p>
-              <button>details</button>
-            </div>
-          </div>
-        ))}
-      </div>
+        </div>
+      ))}
+      </section>
     </div>
-    
   );
 };
 
-export default Browse;
 
+export default Browse;
