@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
 import "./Cart.css";
 import Header from './Header';
@@ -11,12 +10,15 @@ function Cart() {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();
+  const [numItems, setNumItems] = useState(0); // State to track the number of items in the cart...
 
   useEffect(() => {
+     // Fetch cart data from the API nd update the state..
     axios.get('https://6566ef4764fcff8d730f588d.mockapi.io/cart')
       .then(response => {
         setProducts(response.data);
         calculateTotal(response.data);
+        setNumItems(response.data.length); // Update numItems wid the current number of items...
       })
       .catch(error => console.error('Error fetching products:', error));
   }, []);
@@ -35,6 +37,7 @@ function Cart() {
         setProducts(prevProducts => {
           const updatedProducts = prevProducts.filter(product => product.id !== productId);
           calculateTotal(updatedProducts);
+          setNumItems(updatedProducts.length); //
           return updatedProducts;
         });
       })
@@ -60,6 +63,8 @@ function Cart() {
 
     setProducts([]);
     setTotal(0);
+     // Update numItems after clearin' the cart durin' checkout...
+    setNumItems(0); 
     alert('Checkout Success');
   };
   
@@ -93,6 +98,7 @@ function Cart() {
         <section className="checkout">
           <button className="pay" onClick={handleCheckoutClick}>Checkout</button>
           <h3 className="total">${total}</h3>
+          <p className="num-items">Number of items :  {numItems}</p>
         </section>
       </div>
     </div>

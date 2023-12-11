@@ -62,11 +62,23 @@
     color: #fff;
     border: none;
     transition: background-color 0.3s, color 0.3s;
+    padding: 10px;
 }
 
 .checkout button:hover {
     background-color: #00497a;
     color: #fff;
+}
+
+.num-items {
+  width: 15%;
+  cursor: pointer;
+  color: #000000;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0px 8px rgb(255, 255, 255);
+  padding: 5px; 
+  text-align: center;
+  font-size: 18px;
 }
 
 .Home{
