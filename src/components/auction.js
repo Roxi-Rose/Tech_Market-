@@ -63,6 +63,7 @@ function Auction(props) {
     <div className="pparent">
       <div className="pproductDetails">
         <section className="ppDisplay">
+        <h1>≈~Auction</h1>
           <img
             src={product['image-url']}
             alt={product.name}
@@ -70,15 +71,18 @@ function Auction(props) {
             // width="300"
             // height="300"
           />
-          <h4 className="pName">{product.name}</h4>
-          <h3 className='pPrice'>${product.price}</h3>
+          <h4 className="ppName">{product.name}</h4>
+          <h3 className='ppPrice'>${product.price}</h3>
         </section>
-        <section className="ppDetails">
-          <button className="home-btn" onClick={() => navigate('/')}>
+        <button className="home-btn" onClick={() => navigate('/')}>
             Home
           </button>
+        <section className="ppDetails">
+          {/* <button className="home-btn" onClick={() => navigate('/')}>
+            Home
+          </button> */}
           <p>{`All Bids = [${allBids}]`}</p>
-          <h5>{`Current Highest = ${highest}`}</h5>
+          <h4>{`Current Highest = ${highest}`}</h4>
           <article className="form">
             <label>Enter Bid:</label>
             <input
@@ -90,7 +94,21 @@ function Auction(props) {
             />
             <button className = 'bid-btn' onClick={handlePlaceBid}>Place Bid</button>
           </article>
-          {statusMessage && <h5 className="status">{statusMessage}</h5>}
+         {statusMessage && (
+  <h5
+    style={{
+      width: '220%',   
+      color: 'red',    
+      fontSize: '21px',
+      bottom: '20px',
+      position: 'relative',
+      right: '570px', 
+      fontStyle: 'italic'
+    }}
+  > '
+    {statusMessage}'
+  </h5>
+)}
         </section>
       </div>
     </div>
