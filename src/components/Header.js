@@ -22,6 +22,10 @@ function Header() {
     navigate('/cart');
   }
 
+  const LoginClick= ()=>{
+    navigate('/login')
+  }
+
   return (
     <header className="header">
     <div className="header-logo">
@@ -38,7 +42,8 @@ function Header() {
     </nav>
     </div>
     <div className="sign-up">
-      <button>Login</button>
+    <button onClick={LoginClick}>Login</button>
+    {/* <button>Login</button> */}
       <img src="/assets/shop.jpg" alt="Shop Icon" className="shop-icon" onClick={handleCartClick}/>
      <div className="cart-count">{cartCount}</div>
     </div>
