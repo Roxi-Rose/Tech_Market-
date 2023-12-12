@@ -1,27 +1,31 @@
+/* Styles for the parent container */
 .parent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex; /* Uses flexbox */
+  align-items: center; /* Aligns children vertically */
+  justify-content: center; /* Centers children horizontally */
 }
 
+/* Styles for the product details container */
 .productDetails {
-    display: flex;
-    background-color: aliceblue;
-    border-radius: 20px;
-    width: 60vw;
-    height: 70vh;
+  display: flex; /* Uses flexbox */
+  background-color: aliceblue; /* Sets background color */
+  border-radius: 20px; /* Rounds corners */
+  width: 60vw; /* Sets width relative to viewport width */
+  height: 70vh; /* Sets height relative to viewport height */
 }
 
+/* Styles for the product display section */
 .pDisplay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  display: flex; /* Uses flexbox */
+  flex-direction: column; /* Arranges items in a column */
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  padding: 20px; /* Adds padding around content */
 }
 
+/* Styles for the product details section */
 .pDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex; /* Uses flexbox */
+  flex-direction: column; /* Arranges items in a column */
+  justify-content: center; /* Centers children vertically */
 }
