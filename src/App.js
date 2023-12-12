@@ -8,20 +8,31 @@ import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch data from the API endpoint
     fetch('https://6566ef4764fcff8d730f588d.mockapi.io/web')
       .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error('Error fetching data:', error));
+      .then((data) => {
+        setProducts(data);
+        setLoading(false); // Set loading to false once data is fetched
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false); // Set loading to false in case of an error
+      });
   }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Layout products={products} />} />
-        <Route path='/auction/:id' element={<Auction products={products} />}></Route>
+        <Route path='/auction/:id' element={<Auction products={products} />} />
         <Route path='/details/:id' element={<ProductDetails products={products} />} />
         <Route path='/cart' element={<Cart />} />
       </Routes>

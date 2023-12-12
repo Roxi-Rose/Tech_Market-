@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import Header from './Header';
-import Footer from './Footer'; 
+import Footer from './Footer';
 import SearchBar from './Searchbar';
 import Devices from './Devices';
-import Browse from './Browse'; 
-import ProductListingForm from './ProductListingForm'
+import Browse from './Browse';
+import ProductListingForm from './ProductListingForm';
 
 let ProductGallery = () => {
   const firstRowImages = [
@@ -67,67 +67,64 @@ let ProductGallery = () => {
 };
 
 function Layout(props) {
-    const [filtered, setFilteredProducts] = useState([]);
-    //useState for each filter...
-    const [filterType, setFilterType] = useState('');
-    const [filterBrand, setFilterBrand] = useState('');
-    const [filterCondition, setFilterCondition] = useState('');
+  const [filtered, setFilteredProducts] = useState([]);
+  const [filterType, setFilterType] = useState('');
+  const [filterBrand, setFilterBrand] = useState('');
+  const [filterCondition, setFilterCondition] = useState('');
 
-     const handleFilter = () => {
-      setFilteredProducts(
-        props.products.filter(
-          (product) =>
-            (!filterType || product.category.type === filterType) &&
-            (!filterBrand || product.category.brand === filterBrand) &&
-            (!filterCondition || product.category.condition === filterCondition)
-        )
-       );
-  }; 
-
+  const handleFilter = () => {
+    setFilteredProducts(
+      props.products.filter(
+        (product) =>
+          (!filterType || product.category.type === filterType) &&
+          (!filterBrand || product.category.brand === filterBrand) &&
+          (!filterCondition || product.category.condition === filterCondition)
+      )
+    );
+  };
 
   return (
-    
-      <section className="layout">
-        <Header />
-        <Devices />
-        <div className='row'>
-        <SearchBar />
-        <section className="filter_options">
-          {/* Filter Type */}
-          <select className="select-box"  onChange={(e) => setFilterType(e.target.value)}>
-            <option className='option' value=""> Type</option>
-            <option value="laptop">laptop</option>
-            <option value="mobile">mobile</option>
-            <option value="camera">camera</option>
-            <option value="others">others</option>
-          </select>
+    <section className="layout">
+      <Header />
+      <Devices />
+      <div className='row'>
+<SearchBar />
+<section className="filter_options">
+  {/* Filter Type */}
+  <select className="select-box"  onChange={(e) => setFilterType(e.target.value)}>
+    <option className='option' value=""> Type</option>
+    <option value="laptop">laptop</option>
+    <option value="mobile">mobile</option>
+    <option value="camera">camera</option>
+    <option value="others">others</option>
+  </select>
 
-          {/* Filter Brand */}
-          <select className="select-box"  onChange={(e) => setFilterBrand(e.target.value)}>
-            <option className='option' value=""> Brand</option>
-            <option value="Apple">Apple</option>
-            <option value="Samsung">Samsung</option>
-            <option value="Sony">Sony</option>
-            <option value="Dell">Dell</option>
-            <option value="Acer">Acer</option>
-            <option value="Google">Google</option>
-            <option value="Microsoft">Microsoft</option>
-          </select>
+  {/* Filter Brand */}
+  <select className="select-box"  onChange={(e) => setFilterBrand(e.target.value)}>
+    <option className='option' value=""> Brand</option>
+    <option value="Apple">Apple</option>
+    <option value="Samsung">Samsung</option>
+    <option value="Sony">Sony</option>
+    <option value="Dell">Dell</option>
+    <option value="Acer">Acer</option>
+    <option value="Google">Google</option>
+    <option value="Microsoft">Microsoft</option>
+  </select>
 
-          {/* Filter Price */}
-          <select className="select-box"  onChange={(e) => setFilterCondition(e.target.value)}>
-            <option className='option' value="">Condition</option>
-            <option value="new">new</option>
-            <option value="used">used</option>
-          </select>
-          <button className='apply-button' onClick={() => handleFilter(props.products)}>Apply</button>
-        </section>
-       </div>
-        <ProductGallery />
-        <Browse products={props.products.length === filtered.length? props.products : filtered} /> 
-        <ProductListingForm/>
-        <Footer />
-      </section>
+  {/* Filter Price */}
+  <select className="select-box"  onChange={(e) => setFilterCondition(e.target.value)}>
+    <option className='option' value="">Condition</option>
+    <option value="new">new</option>
+    <option value="used">used</option>
+  </select>
+  <button className='apply-button' onClick={() => handleFilter(props.products)}>Apply</button>
+</section>
+</div>
+      <ProductGallery />
+      <Browse products={props.products.length === filtered.length ? props.products : filtered} />
+      <ProductListingForm />
+      <Footer />
+    </section>
   );
 }
 
