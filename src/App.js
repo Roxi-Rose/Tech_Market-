@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Auction from './components/auction';
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
+import Login from './components/Login';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/auction/:id' element={<Auction products={products} />}></Route>
         <Route path='/details/:id' element={<ProductDetails products={products} />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/login' element={<Login />} />  
       </Routes>
     </Router>
   );
