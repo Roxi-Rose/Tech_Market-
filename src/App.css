@@ -75,11 +75,17 @@ header {
     box-shadow: 0px 0px 13px rgb(255, 255, 255);
 }
 .shop-icon {
-    width: 55px;
-    height: 50px;
+    width: 68px;
+    height: 68px;
     border-radius: 10px;
     left: 31px;
     position: relative;
+    border: 1px solid transparent;
+    transition: border 0.5s ease;
+    box-shadow: 0 2px 9px rgba(248, 248, 248, 0.439);
+}
+.shop-icon:hover {
+    border: 1px solid #ffffffc6;
 }
 
 .sign-up {
@@ -132,12 +138,11 @@ nav a:active {
 
 .cart-count {
     border-radius: 1px;
-    font-size: 18px;
-    right: 25px;
+    font-size: 24px;
+    right: 35px;
     bottom: 6px;
     position: relative;
 }
-
 
 /* Footer */
 footer {
@@ -370,7 +375,7 @@ footer img {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.2);
     width: 200px;
-    height: 330px;
+    height: 350px;
     
 }
 
@@ -434,3 +439,29 @@ footer img {
  background-color: #004e81;
  color: #fff;
 }
+
+.login{
+    position: relative;
+    left: 15px; 
+    bottom: 1px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 2px 9px rgba(248, 248, 248, 0.439);
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+.login:hover,
+.login:focus,
+.login:active {
+   color: rgb(38, 0, 128);
+   text-decoration: underline;
+   font-size: 19px;
+}
+  
+
+  

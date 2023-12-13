@@ -14,21 +14,19 @@
 	height: 100vh;
 	background: #111;
 } */
-
 .login-page {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: serif;
-	height: 100vh;
-	background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
   }
   
 .circle
 {
 	position: relative;
-	width: 500px;
-	height: 500px;
+	width: 600px;
+	height: 600px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -97,11 +95,13 @@
 {
 	font-size: 33px;
 	color: #ffffff;
+	margin-top: 40px;
 }
 
 .form .box input 
 {
 	position: relative;
+	left: 0.1px; 
 	width: 100%;
 	padding: 13px 18px;
 	background: transparent;
@@ -109,6 +109,7 @@
 	border-radius: 40px;
 	font-size: 1.2em;
 	color: #fff;
+	bottom: 20px;
     
 }
 .form .box .submit
@@ -141,6 +142,8 @@
 	color: #fff;
 	text-decoration: none;
     font-size: 14px;
+	top: 10px;
+	position: relative;
 }
 
 .form .links a:hover,
