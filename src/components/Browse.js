@@ -15,11 +15,13 @@ const Browse = (props) => {
   };
   
   return (
-
+  
     <div className="-container">
+       
       <section className="filtered-row">
       {props.products.map((product, index) => (
         <div key={index} className="filtered-card">
+          <button className='auction' onClick={() => handleClickAuction(product.id)}>$</button>
           <img
             src={product['image-url']}
             alt={product.name}
@@ -27,11 +29,10 @@ const Browse = (props) => {
             width="300"
             height="200"
           />
-          <button className='auction' onClick={() => handleClickAuction(product.id)}>$</button>
           <div className="filtered-details">
             <h3>{product.name}</h3>
             <p>{`$${product.price}`}</p>
-            <button onClick={() => handleClickDetails(product.id)}>details</button>
+            <button className = 'detail-btn'onClick={() => handleClickDetails(product.id)}>Details 📄</button>
           </div>
         </div>
       ))}
