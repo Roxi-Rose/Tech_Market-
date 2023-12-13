@@ -16,33 +16,18 @@ function ProductListingForm() {
     },
   });
 
-  // const handleInputChange = (e) => {
-    
-  //   setFormData({
-  //     ...formData,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-
   const handleInputChange = (e) => {
-    // Destructure the name and value from the input eve..
-    //Destructuring allows you to extract objects or elements and assign 'em to var in a concise way..
     const { name, value } = e.target;
-  
-    // Set the form data usin' the prev. state..
     setFormData((prevFormData) => {
-          // Check if the input field is 1 of the nested prop in 'category'.. -_-
       if (name === 'brand' || name === 'type' || name === 'condition') {
-         // If yes, update the 'category' object with the new value..
         return {
-          ...prevFormData, //("..." <= spread operator )
+          ...prevFormData,
           category: {
             ...prevFormData.category,
             [name]: value,
           },
         };
       } else {
-       // If no, update the regular form field with the new value
         return {
           ...prevFormData,
           [name]: value,
@@ -62,7 +47,6 @@ function ProductListingForm() {
       .then(response => {
         console.log('Product listed successfully:', response.data);
         setFormVisible(false);
-        // You may want to update the product list after a successful listing
       })
       .catch(error => console.error('Error listing product:', error));
   };
@@ -81,15 +65,10 @@ function ProductListingForm() {
           <label>Image URL:</label>
           <input type="text" name="image-url" placeholder='Image url' value={formData['image-url']} onChange={handleInputChange} required />
           <label>Category:</label>
-
-     
            <input type="text" name="brand" placeholder='brand' value={formData.category.brand} onChange={handleInputChange} required />
-<input type="text" name="type" placeholder='type' value={formData.category.type} onChange={handleInputChange} required />
-<input type="text" name="condition" placeholder='condition' value={formData.category.condition} onChange={handleInputChange} required />
-
-
+           <input type="text" name="type" placeholder='type' value={formData.category.type} onChange={handleInputChange} required />
+           <input type="text" name="condition" placeholder='condition' value={formData.category.condition} onChange={handleInputChange} required />
           <input type="text" name="category" placeholder='Category' value={formData.category} onChange={handleInputChange} required />
-
           <button type="submit">List Product</button>
         </form>
       )}

@@ -17,7 +17,7 @@ const Login = () => {
           <input type="password" placeholder="Password..." />
         </div>
         <div className="box">
-          <input className="submit" type="submit" value="Sign in" />
+          <button className="submit">Submit</button>
         </div>
         <div className="links">
           <a href="#2.html">Forget Password ?</a>
