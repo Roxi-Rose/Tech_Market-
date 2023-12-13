@@ -100,7 +100,7 @@ function Auction(props) {
       width: '220%',   
       color: 'red',    
       fontSize: '21px',
-      bottom: '20px',
+      top: '30px',
       position: 'relative',
       right: '570px', 
       fontStyle: 'italic'

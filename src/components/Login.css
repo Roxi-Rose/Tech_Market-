@@ -15,14 +15,24 @@
 	height: 100vh;
 	background: #111;
 } */
-
 .login-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: serif;
+=
     height: 100vh;
     background: #111;
+  }
+  
+.circle
+{
+	position: relative;
+	width: 600px;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  font-family: serif;
 }
 
 .circle {
@@ -70,6 +80,29 @@
     }
 }
 
+.form h2 
+{
+	font-size: 33px;
+	color: #ffffff;
+	margin-top: 40px;
+}
+
+.form .box input 
+{
+	position: relative;
+	left: 0.1px; 
+	width: 100%;
+	padding: 13px 18px;
+	background: transparent;
+	border: 2px solid #fff;
+	border-radius: 40px;
+	font-size: 1.2em;
+	color: #fff;
+	bottom: 20px;
+    
+}
+
+
 @keyframes animate2 {
     0% {
         transform: rotate(360deg);
@@ -113,6 +146,7 @@
 }
 
 .form .box .submit {
+
     width: 110%;
     background: linear-gradient(45deg, #ff357a, #fff172);
     padding: 13px 18px;
@@ -141,6 +175,8 @@
     color: #fff;
     text-decoration: none;
     font-size: 14px;
+	top: 10px;
+	position: relative;
 }
 
 .form .links a:hover,
