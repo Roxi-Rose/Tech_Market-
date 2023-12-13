@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProductDetails.css';
-
+import Header from './Header';
+import Devices from './Devices';
+import Footer from './Footer';
 export default function ProductDetails(props) {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -36,26 +38,34 @@ export default function ProductDetails(props) {
     }
 
   return (
+    <div>
+    <Header/>
+    <Devices/>
     <div className="parent">
       <div className="productDetails">
         <section className="pDisplay">
+        <h5>≈~Product Details</h5>
           <img
             src={product['image-url']}
             alt={product.name}
             className="card-img"
-            width="300"
-            height="200"
+            // width="50"
+            // height="50"
           />
           <button onClick={() => handleAddToCart(product.id)}>Add to Cart</button>
         </section>
-        <section className="pDetails">
+        <section 
+        className="pDetails">
           <button className="home" onClick={() => navigate('/')}>Home</button>
+      
           <h4 className="pName">{product.name}</h4>
           <h2>${product.price}</h2>
-          <p>{product.description}</p>
-          <h5>{product.category.condition}</h5>
+          <p className='description'>{product.description}</p>
+          <h5>⁘{product.category.condition}</h5>
         </section>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }
