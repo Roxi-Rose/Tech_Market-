@@ -68,3 +68,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Team Members and Contributions
+
+1. Abdul Hadi
+   Responsibility: Product Details Page and Cart Page
+   Created the Product Details page, which displays all the details of the selected product. The product ID and product data are received as props from the parent component (App.js).
+   Implemented the "Add to Cart" button functionality, making a POST request to the "https://6566ef4764fcff8d730f588d.mockapi.io/cart" API endpoint.
+   Implemented the functionality to delete a product from the main page and add it to the cart using a DELETE request to the "https://6566ef4764fcff8d730f588d.mockapi.io/web" API endpoint.
+   Developed the Cart Page, where all products available in the cart API endpoint are fetched using a GET request and displayed.
+2. Habiba
+   Responsibility: Layout Component and Filtering Feature
+   Created the Layout Component, responsible for rendering components such as Header, Devices, Browse, and Footer.
+   Implemented the Browse component, fetching data from the "/web" API endpoint and displaying it.
+   Added a filtering feature to allow users to filter items according to their needs.
+   Created additional components required for the Layout, including the Login component.
+3. Hassah
+   Responsibility: ProductListing Component, Routing, and Hosting
+   Developed the ProductListing component, enabling users to add new products to the website at the "/web" API endpoint using form inputs and a POST request.
+   Implemented routes to different components within the application.
+   Responsible for hosting the website on GitHub.
+4. Zoubaida
+   Responsibility: Auction Component
+   Created the Auction component, allowing users to place bids and compete with others while purchasing products.
+   Displays bidding history and updates the product price if the bid value is greater than the current price, using a PUT request to the "/web" API endpoint.
