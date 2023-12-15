@@ -39,21 +39,31 @@ function ProductListingForm() {
       }
     });
   };
-  
-  
-  
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    axios.post('https://6566ef4764fcff8d730f588d.mockapi.io/web', formData)
-   
-      .then(response => {
+  
+    axios
+      .post('https://6566ef4764fcff8d730f588d.mockapi.io/web', formData)
+      .then((response) => {
         console.log('Product listed successfully:', response.data);
-        // setFormVisible(false);
+        setFormData({
+          name: '',
+          description: '',
+          price: 0,
+          'image-url': '',
+          category: {
+            type: '',
+            brand: '',
+            condition: '',
+          },
+        });
+
+        alert('Product successfully listed');
       })
-      .catch(error => console.error('Error listing product:', error));
+      .catch((error) => console.error('Error listing product:', error));
   };
+  
 
   return (
     <div>
@@ -80,9 +90,7 @@ function ProductListingForm() {
     </div>
     <Footer/>
     </div>
-   
   );
-  
 }
 
 export default ProductListingForm;

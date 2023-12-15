@@ -96,13 +96,13 @@ function Layout() {
   const handleFilter = () => {
     setFilteredProducts(
       products.filter((product) =>
-        (!filterType || new RegExp(filterType, 'i').test(product.category.type)) &&
-        (!filterBrand || new RegExp(filterBrand, 'i').test(product.category.brand)) &&
-        (!filterCondition || new RegExp(filterCondition, 'i').test(product.category.condition))
+        (!filterType || product.category.type === filterType) &&
+        (!filterBrand || product.category.brand === filterBrand) &&
+        (!filterCondition || product.category.condition === filterCondition)
       )
     );
-    setShowStaticImages(false);
-  };
+    setShowStaticImages(false); // Hide static imgs when filters are applied...
+  };  
   
 
 // Render the layout...
@@ -119,10 +119,10 @@ return (
    <option className='option' value=""> Type</option>
    <option value="laptop">Laptops</option>
    <option value="mobile">Smartphones</option>
-   <option value="smartwatcheAs">Smartwatches</option>
-   <option value="pc's">PCs</option>
+   <option value="smartwatches">Smartwatches</option>
+   <option value="pc">PCs</option>
    <option value="headphones">Headphones</option>
-   <option value="cameras">Cameras</option>
+   <option value="camera">Cameras</option>
    <option value="usb">USB</option>
    <option value="routers">Routers</option>
    <option value="tv's">TVs</option>
@@ -131,35 +131,32 @@ return (
   {/* Filter Brand */}
   <select className="select-box"  onChange={(e) => setFilterBrand(e.target.value)}>
    <option  className = "option" value="">Brand</option>
-   <option value="">NVIDIA</option>
-   <option value="">Apple</option>
-   <option value="">Lenovo</option>
-   <option value="">Asus</option>
-   <option value="">Xiaomi</option>
-   <option value="">LG</option>
-   <option value="">Logitech</option>
-   <option value="">Seagate</option>
-   <option value="">Corsair </option>
-   <option value="">AMD</option>
+   <option value="NVIDIA">NVIDIA</option>
+   <option value="Apple">Apple</option>
+   <option value="Lenovo">Lenovo</option>
+   <option value="Asus">Asus</option>
+   <option value="Xiaomi">Xiaomi</option>
+   <option value="LG">LG</option>
+   <option value="Logitech">Logitech</option>
+   <option value="Seagate">Seagate</option>
+   <option value="Corsair">Corsair </option>
+   <option value="AMD">AMD</option>
   </select>
   {/* Filter Price */}
   <select className="select-box"  onChange={(e) => setFilterCondition(e.target.value)}>
    <option className='option' value="">Condition</option>
-   <option value="">New</option>
-   <option value="">Like New</option>
-   <option value="">Refurbished</option>
-   <option value="">Used/Good</option>
-   <option value="">Used/Fair</option>
+   <option value="New">New</option>
+   <option value="Like New">Like New</option>
+   <option value="Refurbished">Refurbished</option>
+   <option value="Used/Good">Used/Good</option>
+   <option value="Used/Fair">Used/Fair</option>
   </select>
   <button className='apply-button' onClick={() => handleFilter(products)}>Apply</button>
   </section>
       
    </div>
-   {/* Render the ProductGallery component with conditional static images */}
   <ProductGallery showStaticImages={showStaticImages} />
-  {/* Render the Browse component with products based on filters */}
   <Browse products={products.length === filtered.length? products : filtered} /> 
-  {/* <ProductListingForm/> */}
   <Footer />
   </section>
   );
