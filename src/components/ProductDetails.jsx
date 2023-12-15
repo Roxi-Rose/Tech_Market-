@@ -5,6 +5,7 @@ import './ProductDetails.css';
 import Header from './Header';
 import Devices from './Devices';
 import Footer from './Footer';
+
 export default function ProductDetails(props) {
   const { id } = useParams();
   const navigate = useNavigate();

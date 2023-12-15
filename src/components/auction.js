@@ -10,7 +10,7 @@ function Auction(props) {
   const product = props.products.find((p) => p.id === id);
   const navigate = useNavigate();
 
-  const [allBids, setAllBids] = useState([1080, 1120, 980, 1170]);
+  const [allBids, setAllBids] = useState([0]);
   const [highest, setHighest] = useState(product.price);
   const [userBid, setUserBid] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
@@ -24,7 +24,7 @@ function Auction(props) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          price: highest.toString(),
+          price: highest,
         }),
       })
         .then((response) => response.json())

@@ -5,7 +5,9 @@ import Auction from './components/auction';
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import Login from './components/Login';
+import Registration from './components/Registration';
 import ProductListingForm from './components/ProductListingForm';
+
 import './App.css';
 
 function App() {
@@ -18,11 +20,11 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       });
   }, []);
 
@@ -37,7 +39,8 @@ function App() {
         <Route path='/auction/:id' element={<Auction products={products} />} />
         <Route path='/details/:id' element={<ProductDetails products={products} />} />
         <Route path='/cart' element={<Cart />} />
-        <Route path='/login' element={<Login />} /> 
+        <Route path='/login' element={<Login />} />  
+        <Route path='/register' element={<Registration />} />
         <Route path="/sell" element={<ProductListingForm />} /> 
       </Routes>
     </Router>

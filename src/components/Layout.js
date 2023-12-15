@@ -93,17 +93,15 @@ function Layout() {
   }, []);
   
   // Handle filter btn click...
-     const handleFilter = () => {
-      setFilteredProducts(
-        products.filter(
-          (product) =>
-            (!filterType || product.category.type === filterType) &&
-            (!filterBrand || product.category.brand === filterBrand) &&
-            (!filterCondition || product.category.condition === filterCondition)
-        )
-       );
-       setShowStaticImages(false);// Hide static imgs when filters r applied...
-      
+  const handleFilter = () => {
+    setFilteredProducts(
+      products.filter((product) =>
+        (!filterType || product.category.type.toLowerCase() === filterType.toLowerCase()) &&
+        (!filterBrand || product.category.brand.toLowerCase() === filterBrand.toLowerCase()) &&
+        (!filterCondition || product.category.condition.toLowerCase() === filterCondition.toLowerCase())
+      )
+    );
+    setShowStaticImages(false); // Hide static imgs when filters are applied...
   }; 
 
 // Render the layout...
