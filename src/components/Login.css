@@ -15,20 +15,19 @@
 	height: 100vh;
 	background: #111;
 } */
-
 .login-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: serif;
     height: 100vh;
     background: #111;
-}
+  }
+
 
 .circle {
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 650px;
+    height: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +57,7 @@
 
 .circle:hover p {
     border: 5px solid var(--clr);
-    filter: drop-shadow(250px 5px 20px var(--clr));
+    filter: drop-shadow(20px 5px 20px var(--clr));
 }
 
 @keyframes animate {
@@ -69,6 +68,14 @@
         transform: rotate(340deg);
     }
 }
+
+.form h2 
+{
+	font-size: 33px;
+	color: #ffffff;
+	margin-top: 40px;
+}
+
 
 @keyframes animate2 {
     0% {
@@ -87,12 +94,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 25px;
+    gap: 16px;
 }
 
 .form h2 {
-    font-size: 33px;
+    font-size: 39px;
     color: #ffffff;
+    font-family: serif;
+    margin-top: 5px;
 }
 
 .form .box {
@@ -100,31 +109,37 @@
     flex-direction: column;
 }
 
-.form .box input {
-    position: relative;
-    left: 0.1vw;
-    width: 100%;
-    padding: 13px 18px;
-    background: transparent;
-    border: 2px solid #fff;
-    border-radius: 40px;
-    font-size: 1.2em;
-    color: #fff;
+.form .box input 
+{
+	position: relative;
+	left: 10px; 
+	width: 100%;
+	padding: 13px 18px;
+	background: transparent;
+	border: 2px solid #fff;
+	border-radius: 40px;
+	font-size: 1.2em;
+	color: #fff;
+    
 }
 
 .form .box .submit {
+
     width: 110%;
-    background: linear-gradient(45deg, #ff357a, #fff172);
+    background: linear-gradient(45deg, #ff357a, #0022ff);
     padding: 13px 18px;
     border-radius: 40px;
     font-size: 1.2em;
     cursor: pointer;
+    margin-top: 50px;
+    border: none;
 }
 
 .form .box .submit:hover,
 .form .box .submit:focus,
 .form .box .submit:active {
     background: #0078ff;
+    border: none;
 }
 
 .form .links {
@@ -141,6 +156,8 @@
     color: #fff;
     text-decoration: none;
     font-size: 14px;
+	top: 10px;
+	position: relative;
 }
 
 .form .links a:hover,

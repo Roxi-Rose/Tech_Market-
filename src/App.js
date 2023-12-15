@@ -6,6 +6,8 @@ import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import Login from './components/Login';
 import Registration from './components/Registration';
+import ProductListingForm from './components/ProductListingForm';
+
 import './App.css';
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/login' element={<Login />} />  
         <Route path='/register' element={<Registration />} />
+        <Route path="/sell" element={<ProductListingForm />} /> 
       </Routes>
     </Router>
   );

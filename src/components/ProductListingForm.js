@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './listingForm.css';
+import Header from './Header';
+import Devices from './Devices';
+import Footer from './Footer';
+
 
 function ProductListingForm() {
-  const [formVisible, setFormVisible] = useState(false);
+  // const [formVisible, setFormVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -46,15 +50,17 @@ function ProductListingForm() {
    
       .then(response => {
         console.log('Product listed successfully:', response.data);
-        setFormVisible(false);
+        // setFormVisible(false);
       })
       .catch(error => console.error('Error listing product:', error));
   };
 
   return (
+    <div>
+    <Header/>
+    <Devices/>
     <div className="product-listing-form">
-      <button onClick={() => setFormVisible(true)}>Sell</button>
-      {formVisible && (
+      {/* <button onClick={() => setFormVisible(true)}>Sell</button> */}
         <form onSubmit={handleFormSubmit}>
           <label>Name:</label>
           <input type="text" name="name" placeholder='Product Name' value={formData.name} onChange={handleInputChange} required />
@@ -71,9 +77,12 @@ function ProductListingForm() {
           <input type="text" name="category" placeholder='Category' value={formData.category} onChange={handleInputChange} required />
           <button type="submit">List Product</button>
         </form>
-      )}
     </div>
+    <Footer/>
+    </div>
+   
   );
+  
 }
 
 export default ProductListingForm;
