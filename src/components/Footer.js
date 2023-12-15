@@ -1,8 +1,16 @@
 
 import React from 'react';
 import '../App.css';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() { 
+  const navigate = useNavigate();
+
+  
+  const SellClick= ()=>{
+    navigate('/sell')
+  }
+
   return (
     <footer>
         <section className="footer-layout">
@@ -12,7 +20,7 @@ function Footer() {
           </div>
           <article id="list-1">
             <ul>
-              <li>Sell at Market Connect</li>
+              <li> <a href="#sell" className='sell' onClick={SellClick}>Sell</a></li>
               <li>Supply to Market Connect</li>
             </ul>
           </article>
