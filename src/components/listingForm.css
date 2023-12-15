@@ -7,7 +7,7 @@
 
 .product-listing-form form {
     top: 30px;
-    margin-bottom:130px;
+    margin-bottom: 130px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -15,28 +15,29 @@
     height: 80vh;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.663); 
+    background-color: rgba(255, 255, 255, 0.663);
     border-radius: 1px;
-    border: 2px solid #ffffff; 
+    border: 2px solid #ffffff;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
-.product-listing-form label{
+.product-listing-form label {
     margin-top: 15px;
     color: rgb(1, 12, 168);
     font-family: serif;
     font-weight: 500;
     font-size: 20px;
 }
+
 .product-listing-form input {
     height: 20px;
-    width:20vw; 
+    width: 20vw;
     border-radius: 5px;
     margin-bottom: 5px;
-    margin-top:5px;
+    margin-top: 5px;
     padding: 5px;
     border: 1px solid rgb(1, 12, 168);
-    background-color: rgba(255, 255, 255, 0.552); 
+    background-color: rgba(255, 255, 255, 0.552);
     transition: box-shadow 0.3s, border-color 0.3s, background-color 0.3s;
 }
 
@@ -46,19 +47,31 @@
     outline: none;
 }
 
-
-.product-listing-form button {
+.listButton {
     margin: 20px;
     padding: 10px;
     width: 100px;
     border-radius: 20px;
-    background-color: #00d21c; 
-    color: #fff; 
+    background-color: #00d21c;
+    color: #fff;
     border: none;
-    transition: background-color 0.3s, color 0.3s; 
-}
-.product-listing-form button:hover{
-    background-color: #009f28;
-    color: #fff; 
+    transition: background-color 0.3s, color 0.3s;
 }
 
+.listButton:hover {
+    background-color: #009f28;
+    color: #fff;
+}
+
+.home {
+    top: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+}

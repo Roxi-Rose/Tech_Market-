@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './listingForm.css';
 import Header from './Header';
@@ -7,7 +8,7 @@ import Footer from './Footer';
 
 
 function ProductListingForm() {
-  // const [formVisible, setFormVisible] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -70,8 +71,8 @@ function ProductListingForm() {
     <Header/>
     <Devices/>
     <div className="product-listing-form">
-      {/* <button onClick={() => setFormVisible(true)}>Sell</button> */}
         <form onSubmit={handleFormSubmit}>
+          <button className="home" onClick={() => navigate('/')}>Home</button>
           <label>Name:</label>
           <input type="text" name="name" placeholder='Product Name' value={formData.name} onChange={handleInputChange} required />
           <label>Description:</label>
@@ -85,7 +86,7 @@ function ProductListingForm() {
            <input type="text" name="type" placeholder='type' value={formData.category.type} onChange={handleInputChange} required />
            <input type="text" name="condition" placeholder='condition' value={formData.category.condition} onChange={handleInputChange} required />
           <input type="text" name="category" placeholder='Category' value={formData.category} onChange={handleInputChange} required />
-          <button type="submit">List Product</button>
+          <button className='listButton' type="submit">List Product</button>
         </form>
     </div>
     <Footer/>

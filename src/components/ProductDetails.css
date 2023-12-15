@@ -1,115 +1,116 @@
 .parent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  }
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .pName {
-  font-size: 22px;
-  font-family: serif;
-  text-decoration: underline;
-  top: 20px;
-  position: relative;
+    font-size: 22px;
+    font-family: serif;
+    text-decoration: underline;
+    top: 20px;
+    position: relative;
 }
 
 .description {
- font-size: 16px;
+    font-size: 16px;
 }
 
 .pDisplay h5 {
-  font-size: 24px; 
-  bottom: 100px;
-  color: rgb(255, 255, 255); 
-  position: relative;
-  background-color: rgba(255, 255, 255, 0);
-  left: 310px;
-  font-family: serif;
-  border: 1px solid  rgb(169, 229, 255); ; 
-  box-shadow: 2px 2px 20px rgb(169, 229, 255); 
-  padding: 3px; 
+    font-size: 24px;
+    bottom: 100px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    left: 310px;
+    font-family: serif;
+    border: 1px solid rgb(169, 229, 255);
+    ;
+    box-shadow: 2px 2px 20px rgb(169, 229, 255);
+    padding: 3px;
 }
-   
-.pDetails h2{
-  font-size: 20px;
-  position: relative;
-  color: green;
+
+.pDetails h2 {
+    font-size: 20px;
+    position: relative;
+    color: green;
 }
 
 .productDetails {
- display: flex;
- margin-top: 70px; 
- margin-bottom: 100px;
- background-color: rgba(255, 255, 255, 0.663); 
- border-radius: 1px;
- width: 55vw;
- height: 70vh;
- border: 2px solid #ffffff; 
- box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); 
+    display: flex;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    background-color: rgba(255, 255, 255, 0.663);
+    border-radius: 1px;
+    width: 55vw;
+    height: 70vh;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
-  
+
 .pDisplay {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-  
+
 .pDisplay button {
-  width: 100px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: #00d21c; 
-  color: #fff; 
-  border: none;
-  transition: background-color 0.3s, color 0.3s; 
-  font-weight: 600;
-  position: relative;
-  bottom: 20px
-  }
-  
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #00d21c;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+    position: relative;
+    bottom: 20px
+}
+
 .pDisplay button:hover {
-  background-color: #009f28;
-  color: #fff; 
+    background-color: #009f28;
+    color: #fff;
 }
 
 .home {
-  bottom: 45px;
-  position: relative;
-  margin-left: 430px; 
-  width: 100px;
-  height: 30px;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  transition: background-color 0.3s, color 0.3s;
-  font-weight: 700;
+    bottom: 45px;
+    position: relative;
+    margin-left: 430px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
 }
-  
+
 .home:hover {
-  background-color: #2980b9;
-  color: #fff;
+    background-color: #2980b9;
+    color: #fff;
 }
-  
+
 .pDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: serif;
-  font-size: 17px;
-  margin-right: 10px; 
-  margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: serif;
+    font-size: 17px;
+    margin-right: 10px;
+    margin-bottom: 120px;
 }
 
 .parent .productDetails .pDisplay .card-img {
-  width: 240px; 
-  height:400px; 
-  border: 1px solid rgb(129, 211, 255);
-  box-shadow: 0 0px 8px rgb(129, 211, 255);
-  border-radius: 10px;
-  bottom: 50px; 
-  position: relative;
+    width: 240px;
+    height: 400px;
+    border: 1px solid rgb(129, 211, 255);
+    box-shadow: 0 0px 8px rgb(129, 211, 255);
+    border-radius: 10px;
+    bottom: 50px;
+    position: relative;
 }
