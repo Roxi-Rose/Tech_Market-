@@ -20,7 +20,7 @@ function Footer() {
           </div>
           <article id="list-1">
             <ul>
-              <li> <a href="#sell" className='sell' onClick={SellClick}>Sell</a></li>
+               <a href="#sell" className='sell' onClick={SellClick}>Sell</a>
               <li>Supply to Market Connect</li>
             </ul>
           </article>

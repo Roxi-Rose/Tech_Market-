@@ -39,7 +39,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 13vh;
+    height: 12vh;
 }
 .header h1 {
     color: rgba(0, 0, 130, 0.778);
@@ -51,7 +51,7 @@ header {
     box-shadow: 0 0 20px 10px rgba(0, 0, 70, 0.507);
     letter-spacing: 3px;
     margin: 0;
-    margin-top: 25px;
+    margin-top: 20px;
     border-style: groove;
     border-color: rgba(255, 255, 255, 0.995);
 }
@@ -105,7 +105,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 250px;
+    margin-left: 300px;
 }
 nav ul {
     list-style: none;
@@ -113,7 +113,7 @@ nav ul {
     display: flex;
     gap: 45px;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     letter-spacing: 2px;
 }
 nav a {
@@ -154,7 +154,7 @@ footer {
     text-align: center;
     bottom: 0; 
     width: 103%;
-    height: 9vh;
+    height: 8vh;
     border: 2px solid #000000;
     box-shadow: 3px 3px 12px rgb(255, 255, 255);
     position: fixed;
@@ -163,11 +163,30 @@ footer {
     display: flex;
     font-size: 13px;
     font-weight: 500;
+    top: 3px;
+    position: relative;
 }
 #list-1 {
     flex: 2;
     text-align: left;
-    padding: 0px 42px 0px;
+    padding: 2px 42px 0px;
+    bottom: 5px;
+    position: relative;;
+}
+#list-1 a{
+    font-size: 17px;
+    bottom: 6px;
+    position: relative;
+    color: rgb(101, 202, 253);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+#list-1 a:hover{
+    color: red;
+    text-decoration: underline;
+    font-size: 18px;
+    position: relative;
+    letter-spacing: 2px;
 }
 #list-2 {
     text-align: left;
@@ -188,7 +207,7 @@ footer img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    margin-top:  2px;
+    margin-top:  1px;
     border-radius: 60px;
     border: 2px solid white;
     box-shadow: 0px 0px 5px rgb(255, 255, 255);
@@ -314,13 +333,18 @@ footer img {
     align-items: center;
     flex-wrap: wrap;
   }
+
+.card-top{
+    top: 40px;
+    position: relative;
+}
   
 .card-top,
 .card-bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px;
+    margin: 25px;
     padding: 10px;
     border: 3px solid #fffefe;
     border-style: groove;
@@ -328,6 +352,7 @@ footer img {
     background-color: rgba(255, 255, 255, 0.2);
     width: 200px;
     height: 270px;
+    margin-bottom: 103px;
 }
   .item-img,
   .card-img {
@@ -377,6 +402,7 @@ footer img {
     background-color: rgba(255, 255, 255, 0.2);
     width: 200px;
     height: 350px;
+    margin-bottom: 120px;
     
 }
 
@@ -451,7 +477,7 @@ footer img {
     font-size: 17px;
     cursor: pointer;
     box-shadow: 0 2px 9px rgba(248, 248, 248, 0.439);
-    color: white;
+    color: rgb(101, 202, 253);
     background-color: rgba(0, 0, 0, 0);
 
 }
@@ -459,7 +485,7 @@ footer img {
 .login:hover,
 .login:focus,
 .login:active {
-   color: rgb(38, 0, 128);
+   color: rgb(255, 0, 0);
    text-decoration: underline;
    font-size: 19px;
 }

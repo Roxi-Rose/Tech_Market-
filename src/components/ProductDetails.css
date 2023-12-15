@@ -22,7 +22,7 @@
   color: rgb(255, 255, 255); 
   position: relative;
   background-color: rgba(255, 255, 255, 0);
-  left: 230px;
+  left: 310px;
   font-family: serif;
   border: 1px solid  rgb(169, 229, 255); ; 
   box-shadow: 2px 2px 20px rgb(169, 229, 255); 
@@ -42,7 +42,7 @@
  background-color: rgba(255, 255, 255, 0.663); 
  border-radius: 1px;
  width: 55vw;
- height: 77vh;
+ height: 70vh;
  border: 2px solid #ffffff; 
  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); 
 }
@@ -75,8 +75,9 @@
 }
 
 .home {
-  margin-bottom:30px; 
-  margin-left: 360px; 
+  bottom: 45px;
+  position: relative;
+  margin-left: 430px; 
   width: 100px;
   height: 30px;
   border-radius: 10px;
