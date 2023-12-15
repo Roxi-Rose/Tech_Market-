@@ -69,7 +69,7 @@ const Register = () => {
           <button className="submit" onClick={handleRegister}>Register</button>
         </div>
         <div className="links">
-          <a href="#2.html">Forget Password ?</a>
+          <a href="#2.html">New User</a>
           <a href="#2.html" onClick={handleLoginSwitch}>Login</a>
         </div>
       </div>

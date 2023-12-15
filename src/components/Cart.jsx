@@ -10,15 +10,14 @@ function Cart() {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();
-  const [numItems, setNumItems] = useState(0); // State to track the number of items in the cart...
+  const [numItems, setNumItems] = useState(0);
 
   useEffect(() => {
-     // Fetch cart data from the API nd update the state..
     axios.get('https://6566ef4764fcff8d730f588d.mockapi.io/cart')
       .then(response => {
         setProducts(response.data);
         calculateTotal(response.data);
-        setNumItems(response.data.length); // Update numItems wid the current number of items...
+        setNumItems(response.data.length);
       })
       .catch(error => console.error('Error fetching products:', error));
   }, []);
@@ -37,7 +36,7 @@ function Cart() {
         setProducts(prevProducts => {
           const updatedProducts = prevProducts.filter(product => product.id !== productId);
           calculateTotal(updatedProducts);
-          setNumItems(updatedProducts.length); //
+          setNumItems(updatedProducts.length);
           return updatedProducts;
         });
       })
@@ -63,7 +62,6 @@ function Cart() {
 
     setProducts([]);
     setTotal(0);
-     // Update numItems after clearin' the cart durin' checkout...
     setNumItems(0); 
     alert('Checkout Success');
   };
@@ -72,34 +70,34 @@ function Cart() {
     <div>
     <Header/>
     <Devices/>
-    <div className='Parent'>
-      <div className='Container'>
-      <h2 className="title">≈~Your Cart</h2>
-        <button className="Home" onClick={() => navigate('/')}>Home</button>
-        {products.map(product => (
-          <section className="cartProduct" key={product.id}>
-            <img
-              src={product['image-url']}
-              alt={product.name}
-              className="card-img"
-              width="300"
-              height="200"
-            />
-            <article className="details">
-              <h3 className="name">{product.name}</h3>
-              <p className="details">{product.description}</p>
-            </article>
-            <div className="price-remove-container">
-    <h3 className="price">${product.price}</h3>
-    <button className="remove" onClick={() => handleRemoveClick(product.id)}>X</button>
-  </div>
+      <div className='Parent'>
+        <div className='Container'>
+          <h2 className="title">≈~Your Cart</h2>
+          <button className="Home" onClick={() => navigate('/')}>Home</button>
+          {products.map(product => (
+            <section className="cartProduct" key={product.id}>
+              <img
+                src={product['image-url']}
+                alt={product.name}
+                className="card-img"
+                width="300"
+                height="200"
+              />
+              <article className="details">
+                <h3 className="name">{product.name}</h3>
+                <p className="details">{product.description}</p>
+              </article>
+              <div className="price-remove-container">
+                <h3 className="price">${product.price}</h3>
+                <button className="remove" onClick={() => handleRemoveClick(product.id)}>X</button>
+              </div>
+            </section>
+          ))}
+          <section className="checkout">
+            <button className="pay" onClick={handleCheckoutClick}>Checkout</button>
+            <h3 className="total">${total}</h3>
+            <p className="num-items">Number of items :  {numItems}</p>
           </section>
-        ))}
-        <section className="checkout">
-          <button className="pay" onClick={handleCheckoutClick}>Checkout</button>
-          <h3 className="total">${total}</h3>
-          <p className="num-items">Number of items :  {numItems}</p>
-        </section>
       </div>
     </div>
     <Footer/>
