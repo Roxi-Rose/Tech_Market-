@@ -120,7 +120,7 @@ return (
    <option className='option' value=""> Type</option>
    <option value="laptop">Laptops</option>
    <option value="mobile">Smartphones</option>
-   <option value="smartwatches">Smartwatches</option>
+   <option value="smartwatcheAs">Smartwatches</option>
    <option value="pc's">PCs</option>
    <option value="headphones">Headphones</option>
    <option value="cameras">Cameras</option>
