@@ -96,13 +96,14 @@ function Layout() {
   const handleFilter = () => {
     setFilteredProducts(
       products.filter((product) =>
-        (!filterType || product.category.type.toLowerCase() === filterType.toLowerCase()) &&
-        (!filterBrand || product.category.brand.toLowerCase() === filterBrand.toLowerCase()) &&
-        (!filterCondition || product.category.condition.toLowerCase() === filterCondition.toLowerCase())
+        (!filterType || new RegExp(filterType, 'i').test(product.category.type)) &&
+        (!filterBrand || new RegExp(filterBrand, 'i').test(product.category.brand)) &&
+        (!filterCondition || new RegExp(filterCondition, 'i').test(product.category.condition))
       )
     );
-    setShowStaticImages(false); // Hide static imgs when filters are applied...
-  }; 
+    setShowStaticImages(false);
+  };
+  
 
 // Render the layout...
 return (
