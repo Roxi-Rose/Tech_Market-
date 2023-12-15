@@ -97,10 +97,10 @@ function Auction(props) {
          {statusMessage && (
   <h5
     style={{
-      width: '220%',   
-      color: 'red',    
+      width: '230%',   
+      color: 'darkred',    
       fontSize: '21px',
-      bottom: '20px',
+      top: '30px',
       position: 'relative',
       right: '570px', 
       fontStyle: 'italic'

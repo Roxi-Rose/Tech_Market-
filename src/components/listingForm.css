@@ -6,23 +6,59 @@
 }
 
 .product-listing-form form {
+    top: 30px;
+    margin-bottom:130px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 40vw;
+    height: 80vh;
     align-items: center;
     justify-content: center;
-    background-color: aliceblue;
-    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.663); 
+    border-radius: 1px;
+    border: 2px solid #ffffff; 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
+.product-listing-form label{
+    margin-top: 15px;
+    color: rgb(1, 12, 168);
+    font-family: serif;
+    font-weight: 500;
+    font-size: 20px;
+}
 .product-listing-form input {
     height: 20px;
+    width:20vw; 
     border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top:5px;
+    padding: 5px;
+    border: 1px solid rgb(1, 12, 168);
+    background-color: rgba(255, 255, 255, 0.552); 
+    transition: box-shadow 0.3s, border-color 0.3s, background-color 0.3s;
 }
+
+.product-listing-form input:focus {
+    border: 1px solid rgb(129, 211, 255);
+    box-shadow: 0 0px 8px rgb(129, 211, 255);
+    outline: none;
+}
+
 
 .product-listing-form button {
     margin: 20px;
     padding: 10px;
     width: 100px;
     border-radius: 20px;
+    background-color: #00d21c; 
+    color: #fff; 
+    border: none;
+    transition: background-color 0.3s, color 0.3s; 
 }
+.product-listing-form button:hover{
+    background-color: #009f28;
+    color: #fff; 
+}
+

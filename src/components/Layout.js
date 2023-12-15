@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import '../App.css';
 import Header from './Header';
 import Footer from './Footer';
 import SearchBar from './Searchbar';
 import Devices from './Devices';
 import Browse from './Browse';
-import ProductListingForm from './ProductListingForm';
+// import ProductListingForm from './ProductListingForm';
 
 let ProductGallery = ({showStaticImages}) => {
   //static imgs data...
@@ -119,7 +119,7 @@ return (
    <option className='option' value=""> Type</option>
    <option value="laptop">Laptops</option>
    <option value="mobile">Smartphones</option>
-   <option value="smartwatches">Smartwatches</option>
+   <option value="smartwatcheAs">Smartwatches</option>
    <option value="pc's">PCs</option>
    <option value="headphones">Headphones</option>
    <option value="cameras">Cameras</option>
@@ -159,7 +159,7 @@ return (
   <ProductGallery showStaticImages={showStaticImages} />
   {/* Render the Browse component with products based on filters */}
   <Browse products={products.length === filtered.length? products : filtered} /> 
-  <ProductListingForm/>
+  {/* <ProductListingForm/> */}
   <Footer />
   </section>
   );

@@ -42,7 +42,10 @@ function Header() {
     </nav>
     </div>
     <div className="sign-up">
-    <button onClick={LoginClick}>Login</button>
+    <a href="#login" className='login' onClick={LoginClick}>
+  Login
+</a>
+
     {/* <button>Login</button> */}
       <img src="/assets/shop.jpg" alt="Shop Icon" className="shop-icon" onClick={handleCartClick}/>
      <div className="cart-count">{cartCount}</div>
